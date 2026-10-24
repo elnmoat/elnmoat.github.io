@@ -1,0 +1,60 @@
+---
+title: "El Nemrawi Moatsembellh"
+subtitle: "Élève ingénieur ENSEA | Systèmes embarqués & FPGA"
+format:
+  html:
+    toc: false
+    page-layout: full
+listing:
+  id: mes-projets
+  contents: travaux
+  type: grid
+  sort: "date desc"
+  categories: false
+  image-height: "250px"
+  grid-columns: 2
+  fields: [image, title, description, categories]
+  
+---
+
+::: {.text-center}
+# Bienvenue dans mon univers 
+
+Bonjour ! Je suis **El Nemrawi**, étudiant ingénieur en 2ème année à l'ENSEA. Passionné par les systèmes embarqués, la conception numérique sur FPGA et la conception de cartes électroniques, ce site regroupe mes travaux marquants.
+
+Je recherche un **stage de 3 à 4 mois à partir d'avril 2027** en systèmes embarqués, microélectronique ou FPGA.
+
+### 🛠️ Boîte à Outils & Compétences
+<div style="margin: 20px 0;">
+  <span class="badge rounded-pill bg-primary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Python / C / Java</span>
+  <span class="badge rounded-pill bg-success" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Systèmes Embarqués & FPGA</span>
+  <span class="badge rounded-pill bg-info text-dark" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">VHDL / Quartus / Assembleur ARM</span>
+  <span class="badge rounded-pill bg-secondary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">STM32CubeIDE / KiCad / Matlab</span>
+</div>
+
+<div style="margin: 40px 0;">
+  <a href="CV_moatsembellh.pdf" class="btn btn-dark btn-lg" target="_blank">
+    <i class="bi bi-file-earmark-pdf-fill"></i> TÉLÉCHARGER MON CV
+  </a>
+  <a href="contact.qmd" class="btn btn-success btn-lg mx-2">
+    <i class="bi bi-envelope"></i> ME CONTACTER
+  </a>
+</div>
+<div style="margin-bottom: 50px;">
+  <a href="https://linkedin.com/in/elnmoat" class="btn btn-outline-primary">
+    <i class="bi bi-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/elnmoat" class="btn btn-outline-dark mx-2">
+    <i class="bi bi-github"></i> GitHub
+  </a>
+</div>
+
+:::
+
+---
+
+## Mes Réalisations
+*Consultez les projets que j'ai eu la chance de réaliser tout au long de mon parcours.*
+
+::: {#mes-projets}
+:::

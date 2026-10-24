@@ -1,0 +1,87 @@
+---
+title: "TIPE : modélisation dynamique d'un wave glider"
+date: 2025-06-01
+description: "Étude d'un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu en Python (Runge-Kutta d'ordre 4)."
+sidebar: tipe-sidebar2
+categories: [Modélisation, Python, Expérimentation, CPGE]
+image: "waveglider.jpg"
+title-block-banner: "waveglider.jpg"
+title-block-banner-color: "black"
+---
+
+::: {.callout-note}
+Le TIPE est un travail de recherche personnel mené en classes préparatoires (MPSI-PSI, lycée Chaptal) et présenté aux concours. Le thème imposé de l'année était **« Transition, transformation, conversion »**.
+:::
+
+## En bref
+
+| | |
+|:--|:--|
+| **Cadre** | TIPE, classes préparatoires, 2024–2025 |
+| **Démarche** | Expérience (2 prototypes) puis modélisation numérique |
+| **Outils** | Python (NumPy, Matplotlib), Tracker (analyse vidéo), équations de Kane, Runge-Kutta d'ordre 4 |
+
+## Contexte
+
+Le **wave glider** est un drone de surface qui avance sans carburant. Il se compose d'un **flotteur** en surface relié par un câble à un **glider** immergé équipé de pales inclinables. Quand la houle soulève et abaisse le flotteur, les pales du glider transforment ce mouvement vertical en une poussée horizontale. Ce principe lui permet de rester des mois en mer pour des missions océanographiques, environnementales ou de surveillance.
+
+**Problématique :** comment assurer un mouvement hydrodynamique optimal du flotteur sans apport d'énergie extérieur, avec de nombreux paramètres contraignants (masse des composants, dimensions du flotteur, longueur du câble) ?
+
+## Objectifs
+
+* Mesurer la vitesse maximale du prototype selon les conditions de houle.
+* Trouver la longueur de câble qui maximise la vitesse.
+* Estimer numériquement le rapport de masse optimal entre glider et flotteur et le meilleur angle d'attaque des pales.
+
+## Expérimentation
+
+J'ai construit **deux prototypes**. Le premier, testé dans une baignoire avec un générateur de houle à bielle-manivelle, a permis de valider le principe. Le second (glider de 43 g, flotteur de 153,5 g) a été testé dans un **bassin à vagues** avec un générateur motorisé et de la mousse pour atténuer la houle réfléchie.
+
+Les mouvements ont été filmés puis analysés image par image avec **Tracker** : pour chaque série, j'ai ajusté la houle mesurée sur le flotteur par une sinusoïde et calculé la vitesse moyenne du prototype. J'ai ensuite comparé trois longueurs de câble (3,5 cm, 4,7 cm et 5,2 cm).
+
+## Modélisation
+
+* **Forces** : portance et traînée sur les pales, poids et poussée d'Archimède, traînée du flotteur.
+* **Équations de Kane** : cette méthode traite chaque corps séparément sans faire apparaître les forces de liaison, ce qui simplifie le calcul pour un système à deux corps reliés par un câble. Elle donne deux équations différentielles couplées, sur l'angle du câble et sur la vitesse horizontale du flotteur.
+* **Résolution numérique** : schéma de **Runge-Kutta d'ordre 4** codé en Python, qui donne l'évolution de la vitesse du flotteur au cours du temps (vitesse moyenne simulée d'environ 0,08 m/s).
+
+## Résultats
+
+* Vitesse maximale atteinte pour une hauteur de vague d'environ 2 cm.
+* Longueur de câble optimale d'environ **5,2 cm** pour le prototype n°2.
+* Rapport de masse optimal autour de **1,5** et angle d'attaque des pales optimal entre **20° et 30°**.
+
+**Limites et pistes.** Le modèle suppose que le flotteur suit parfaitement la houle, que l'angle du câble reste constant et que la trajectoire est plane. Les pistes d'amélioration sont un capteur embarqué pour mesurer directement le mouvement et un câble de longueur réglable.
+
+## Diaporama de présentation
+
+*Faire défiler à l'aide des flèches. Plus de détails dans la [documentation](../doc.qmd).*
+
+```{python}
+#| echo: false
+#| output: asis
+
+path = "tipe/"
+
+print('```{=html}')
+print('<div id="tipeViewer" class="carousel carousel-dark slide shadow rounded-3 border" data-bs-ride="false" style="max-width: 1000px; margin: auto; background: #fff;">')
+print('  <div class="carousel-inner">')
+for i in range(22):
+    active = 'active' if i == 0 else ''
+    print(f'    <div class="carousel-item {active}">')
+    print(f'      <img src="{path}slide-{i}.jpg" class="d-block w-100" alt="Diapositive {i}" loading="lazy" style="height: auto; object-fit: contain;">')
+    print('    </div>')
+print('  </div>')
+print('''
+  <button class="carousel-control-prev" type="button" data-bs-target="#tipeViewer" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Précédent</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#tipeViewer" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
+''')
+print('```')
+```

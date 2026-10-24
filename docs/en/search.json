@@ -1,0 +1,263 @@
+[
+  {
+    "objectID": "works/project4.html",
+    "href": "works/project4.html",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "",
+    "text": "Context\nFPGA lab project, ENSEA, 2026–2027\n\n\nTeam\n2 students\n\n\nTools\nVHDL, Quartus Prime, NVC, Surfer, testbenches"
+  },
+  {
+    "objectID": "works/project4.html#at-a-glance",
+    "href": "works/project4.html#at-a-glance",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "",
+    "text": "Context\nFPGA lab project, ENSEA, 2026–2027\n\n\nTeam\n2 students\n\n\nTools\nVHDL, Quartus Prime, NVC, Surfer, testbenches"
+  },
+  {
+    "objectID": "works/project4.html#goal",
+    "href": "works/project4.html#goal",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "Goal",
+    "text": "Goal\nBuild a digital version of the Etch A Sketch: two rotary knobs move a pen that draws on a screen. The project runs on a DE10-Nano board (Intel Cyclone V SoC FPGA 5CSEBA6U23I7) with a mezzanine board holding two rotary encoders and 10 LEDs. The image is sent to the board’s HDMI output.\nEach block is first validated in simulation (VHDL testbench, NVC and Surfer), then tested on the board after synthesis and pin assignment in Quartus."
+  },
+  {
+    "objectID": "works/project4.html#architecture",
+    "href": "works/project4.html#architecture",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\nflowchart LR\n    ENC_G[Left encoder] --&gt; DEC_X[Quadrature decoder X]\n    ENC_D[Right encoder] --&gt; DEC_Y[Quadrature decoder Y]\n    DEC_X -- \"pen x\" --&gt; RAM[Dual-port&lt;br/&gt;frame memory]\n    DEC_Y -- \"pen y\" --&gt; RAM\n    CTRL[HDMI controller&lt;br/&gt;HS / VS / DE] -- \"pixel address\" --&gt; RAM\n    RAM -- \"colour\" --&gt; ADV[ADV7513 HDMI chip]\n    CTRL -- \"sync signals\" --&gt; ADV\n    ADV --&gt; SCREEN([Screen])"
+  },
+  {
+    "objectID": "works/project4.html#quadrature-encoder-decoding",
+    "href": "works/project4.html#quadrature-encoder-decoding",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "Quadrature encoder decoding",
+    "text": "Quadrature encoder decoding\nA rotary encoder outputs two signals, A and B, shifted by a quarter period: the order in which they change gives the direction of rotation. The decoder detects rising and falling edges on A and B and increments or decrements a counter whose width is configurable (generic).\n\nSynchronisation: A and B are asynchronous, so they go through a two-flip-flop register before any edge detection to avoid metastability.\nDebouncing: on the board, a single notch made the counter jump by several steps because of mechanical bounce. I added a G_TICK_DIV generic that subsamples A and B (every 1 ms with a 50 MHz clock), which removes the bounce without missing any notch.\nClamping: the counter is used as the pen coordinate, so it must stay within the image instead of wrapping from one edge to the other.\n\n\n\n\nEdge detection and counter increment logic\n\n\n\n\n\nEncoder simulation, clockwise then counter-clockwise rotation (Surfer)"
+  },
+  {
+    "objectID": "works/project4.html#hdmi-video-controller",
+    "href": "works/project4.html#hdmi-video-controller",
+    "title": "Etch A Sketch on FPGA (VHDL)",
+    "section": "HDMI video controller",
+    "text": "HDMI video controller\nThe controller generates the horizontal and vertical sync signals (HS, VS) and the Data Enable signal expected by the ADV7513 chip, for a 720 × 480 resolution. It also outputs the address and (x, y) coordinates of the pixel being displayed, used to read the frame memory. Timings (front porch, sync, back porch) are generic parameters of the component.\n\n  Back to projects"
+  },
+  {
+    "objectID": "works/project2.html",
+    "href": "works/project2.html",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "",
+    "text": "Note\n\n\n\nThis is my TIPE, a personal research project carried out during the two years of French preparatory classes for engineering schools (MPSI-PSI, Lycée Chaptal, Paris) and presented at the entrance exams. The theme imposed that year was “Transition, transformation, conversion”. The slides below are in French.",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#at-a-glance",
+    "href": "works/project2.html#at-a-glance",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\n\n\n\n\nContext\nResearch project, preparatory classes, 2024–2025\n\n\nApproach\nExperiments (2 prototypes), then numerical modelling\n\n\nTools\nPython (NumPy, Matplotlib), Tracker (video analysis), Kane’s equations, 4th-order Runge-Kutta",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#context",
+    "href": "works/project2.html#context",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Context",
+    "text": "Context\nA wave glider is a surface drone that moves without fuel. It consists of a float on the surface, connected by a tether to a submerged glider fitted with pivoting wings. As the swell lifts and lowers the float, the glider’s wings turn this vertical motion into horizontal thrust. This lets it stay at sea for months on oceanographic, environmental or surveillance missions.\nResearch question: how can the float achieve optimal hydrodynamic motion without any external energy input, given many constraining parameters (component mass, float dimensions, tether length)?",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#objectives",
+    "href": "works/project2.html#objectives",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Objectives",
+    "text": "Objectives\n\nMeasure the prototype’s maximum speed under different wave conditions.\nFind the tether length that maximises speed.\nNumerically estimate the optimal glider-to-float mass ratio and the best angle of attack for the wings.",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#experiments",
+    "href": "works/project2.html#experiments",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Experiments",
+    "text": "Experiments\nI built two prototypes. The first, tested in a bathtub with a crank-driven wave maker, validated the principle. The second (43 g glider, 153.5 g float) was tested in a wave tank with a motorised wave generator and foam to damp reflected waves.\nThe motion was filmed and analysed frame by frame with Tracker: for each run, I fitted the wave measured on the float with a sine function and computed the prototype’s average speed. I then compared three tether lengths (3.5 cm, 4.7 cm and 5.2 cm).",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#modelling",
+    "href": "works/project2.html#modelling",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Modelling",
+    "text": "Modelling\n\nForces: lift and drag on the wings, weight and buoyancy, drag on the float.\nKane’s equations: this method handles each body separately without bringing in constraint forces, which simplifies the derivation for a two-body system linked by a tether. It yields two coupled differential equations, on the tether angle and on the float’s horizontal speed.\nNumerical solving: a 4th-order Runge-Kutta scheme written in Python, giving the float’s speed over time (simulated average speed of about 0.08 m/s).",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#results",
+    "href": "works/project2.html#results",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Results",
+    "text": "Results\n\nMaximum speed reached for a wave height of about 2 cm.\nOptimal tether length of about 5.2 cm for prototype no. 2.\nOptimal mass ratio around 1.5 and optimal wing angle of attack between 20° and 30°.\n\nLimitations and next steps. The model assumes the float follows the swell perfectly, a constant tether angle and planar motion. Possible improvements are an on-board sensor to measure the motion directly and an adjustable tether length.",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "works/project2.html#presentation-slides",
+    "href": "works/project2.html#presentation-slides",
+    "title": "Research project: dynamic modelling of a wave glider",
+    "section": "Presentation slides",
+    "text": "Presentation slides\nUse the arrows to browse (slides in French). More background in the wave glider overview.\n\n  \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n  \n\n  \n    \n    Previous\n  \n  \n    \n    Next",
+    "crumbs": [
+      "Home",
+      "Wave glider research project",
+      "Project overview"
+    ]
+  },
+  {
+    "objectID": "doc.html",
+    "href": "doc.html",
+    "title": "Background on the wave glider",
+    "section": "",
+    "text": "Explanatory video on YouTube\nLiquid Robotics is an American company specialising in autonomous marine robotics. It designs and builds the Wave Glider, an unmanned surface vehicle (USV) powered by solar and wave energy: it harvests the energy of ocean waves for propulsion. It can therefore spend several months at sea in a row, collecting and transmitting ocean data.\nIts applications are mainly in defence, maritime surveillance, oil and gas, and scientific research, for example:\n\nMonitoring of oil and gas infrastructure, of the atmosphere, and seismic and environmental monitoring\nDefence (anti-submarine warfare, intelligence, surveillance and reconnaissance)\nMaritime surveillance (detection of surface vessels for coastal and border security)\nScientific research (meteorological, climate and seismic data in the open ocean, ocean acidification, environmental monitoring, fish and ecosystem monitoring)\n\nIt carries batteries and atmospheric and oceanographic sensors, seismic sensors for earthquake and tsunami detection, as well as cameras and hydrophones for security, surveillance, research or protection of the marine environment.\nSince 2007, Wave Gliders have been deployed from the Arctic to the Southern Ocean, for example to track great white sharks, to patrol marine protected areas against illegal fishing, and to assess the health of the Great Barrier Reef. They have also collected data during extreme storms and detected and tracked a diesel submarine during the Unmanned Warrior exercise in October 2016.\n\nDesign\nThe Wave Glider is made of two parts:\n\nThe float, roughly the size and shape of a large surfboard, which moves on the ocean surface;\nThe wing rack (glider), suspended below on a 4 to 8 metre tether, fitted with a rudder for steering and a thruster providing extra thrust in extreme conditions (turbulence, no current or strong current).\n\n \nThe wings can rotate within a range of about 60 degrees, so that their inclination always favours forward thrust on the float.\nThe Wave Glider exploits the difference in motion between the ocean surface and the calmer water below to create forward propulsion. More precisely, a lift force combined with a drag force, mainly due to the float being moved up and down by the swell, ensures that the wings always pull the float forward.\nNo fuel is needed, which allows it to stay at sea for long periods.\nOn 7 September 2017, Liquid Robotics announced a new-generation Wave Glider designed for very rough seas (sea state 6 and above) and cold, high-latitude waters, with a larger sensor payload and more energy and storage capacity for long maritime surveillance and environmental observation missions.",
+    "crumbs": [
+      "Wave glider research project",
+      "Background on the wave glider"
+    ]
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Click on a project to see the details, diagrams and results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nDigital design\n\nHDMI\n\n\n\nDigital Etch A Sketch on a DE10-Nano board: decoding of two rotary encoders, HDMI video controller and frame memory in VHDL, validated in simulation and then on the board…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nEmbedded systems\n\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI)…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n\nJava\n\nSwing\n\nObject-oriented programming\n\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\n\nModelling\n\nPython\n\nExperimentation\n\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane’s equations solved in Python…\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "El Nemrawi Moatsembellh",
+    "section": "",
+    "text": "Hi! I’m El Nemrawi, a second-year engineering student at ENSEA (École Nationale Supérieure de l’Électronique et de ses Applications, France). I’m passionate about embedded systems, digital design on FPGA and PCB design. This site gathers my main projects.\nI’m looking for a 3 to 4 month internship from April 2027 in embedded systems, microelectronics or FPGA.\n\n\n\nPython / C / Java Embedded Systems & FPGA VHDL / Quartus / ARM Assembly STM32CubeIDE / KiCad / Matlab\n\n\n  DOWNLOAD MY RESUME    CONTACT ME \n\n\n  LinkedIn    GitHub"
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "El Nemrawi Moatsembellh",
+    "section": "Projects",
+    "text": "Projects\nA selection of the projects I have worked on during my studies.\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nDigital design\n\nHDMI\n\n\n\nDigital Etch A Sketch on a DE10-Nano board: decoding of two rotary encoders, HDMI video controller and frame memory in VHDL, validated in simulation and then on the board…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nEmbedded systems\n\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI)…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n\nJava\n\nSwing\n\nObject-oriented programming\n\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\n\nModelling\n\nPython\n\nExperimentation\n\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane’s equations solved in Python…\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Do you have a question about one of my projects, or an internship opportunity to discuss?\nFeel free to send me a message! I will get back to you as soon as possible.\n\n  Send me an email \n\n\nContact details\n\n Email: elnmoat@gmail.com\n School email: moatsembellh.elnemrawi@ensea.fr\n LinkedIn: LinkedIn profile\n GitHub: My GitHub"
+  },
+  {
+    "objectID": "works/project1.html",
+    "href": "works/project1.html",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "",
+    "text": "Context\nFirst-year project, ENSEA, 2025–2026\n\n\nTeam\n5 students\n\n\nMy role\nPCB schematic and layout, firmware and testing of the ToF sensor and radio module\n\n\nTools\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+  },
+  {
+    "objectID": "works/project1.html#at-a-glance",
+    "href": "works/project1.html#at-a-glance",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "",
+    "text": "Context\nFirst-year project, ENSEA, 2025–2026\n\n\nTeam\n5 students\n\n\nMy role\nPCB schematic and layout, firmware and testing of the ToF sensor and radio module\n\n\nTools\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+  },
+  {
+    "objectID": "works/project1.html#goal",
+    "href": "works/project1.html#goal",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "Goal",
+    "text": "Goal\nPC_BOT is a small wheeled robot designed to map a room. Several robots position themselves along the walls, move autonomously while avoiding obstacles and share their positions over radio. Each robot continuously sends its distances to obstacles, orientation, speed and acceleration to a base station, which builds a 2D map of the room."
+  },
+  {
+    "objectID": "works/project1.html#requirements",
+    "href": "works/project1.html#requirements",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "Requirements",
+    "text": "Requirements\n\n\n\n\n\n\n\nFunction\nChosen solution\n\n\n\n\nAutonomous motion\n2 DC gear motors driven by PWM through a DRV8411A driver\n\n\nObstacle sensing\nVL53L0X time-of-flight sensor (I2C)\n\n\nOrientation and motion\nLSM6DSOX inertial measurement unit (I2C)\n\n\nCommunication\nnRF24L01+ 2.4 GHz radio module (SPI)\n\n\nPower\n18650 Li-ion battery (3400 mAh), BQ25896 charger over USB-C, 3.3 V regulator\n\n\nMain controller\nSTM32G431KBT6 microcontroller"
+  },
+  {
+    "objectID": "works/project1.html#hardware-architecture",
+    "href": "works/project1.html#hardware-architecture",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "Hardware architecture",
+    "text": "Hardware architecture\n\n\n\n\n\ngraph LR\n    MCU[STM32G431KBT6]\n\n    subgraph BUS_I2C [I2C bus]\n        TOF[VL53L0X ToF sensor]\n        IMU[LSM6DSOX IMU]\n        BQ[BQ25896 charger]\n    end\n\n    subgraph BUS_SPI [SPI bus]\n        NRF[nRF24L01+ module]\n    end\n\n    subgraph POWER [Power]\n        BAT[18650 battery]\n        USB[USB-C port]\n    end\n\n    subgraph MOTORS [Motors]\n        DRV[DRV8411A driver]\n        M1[DC motors]\n    end\n\n    MCU -- \"SDA / SCL\" --- BUS_I2C\n    MCU -- \"MOSI / MISO / SCK\" --- BUS_SPI\n    MCU -- \"PWM\" --- DRV\n    DRV --- M1\n\n    USB -- \"Charge\" --- BQ\n    BAT -- \"Energy\" --- BQ\n    BQ -- \"VCC\" --- MCU\n\n    NRF -. \"2.4 GHz radio\" .-&gt; Station[Base station]\n\n\n\n\n\n\nThe sensors (ToF, IMU, charger) share an I2C bus with 4.7 kΩ pull-ups. The radio module sits on a faster, full-duplex SPI bus to stream data continuously. The STM32 is programmed and debugged through an ST-LINK (SWD) connector."
+  },
+  {
+    "objectID": "works/project1.html#what-i-did",
+    "href": "works/project1.html#what-i-did",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "What I did",
+    "text": "What I did\nPCB design (KiCad). Full schematic and layout of a 4-layer SMD board: microcontroller, Li-ion charging chain (BQ25896 with its 1 µH inductor, USB-C connector), 3.3 V regulation, motor driver, sensor and radio connectors, status LEDs and buttons. Each component choice was checked against its datasheet.\nC firmware (STM32CubeIDE). Before the final board was ready, each sensor was validated on an STM32 development board:\n\nToF sensor: distance readings over I2C. The sensor detects obstacles from about 3 cm to just under one metre, with a range that depends on ambient light.\nRadio link: communication between two STM32 boards, each fitted with an nRF24L01+, in transmit and receive mode, with received frames displayed in PuTTY.\n\nAssembly and bring-up. Soldering of the SMD components, then sensor-by-sensor testing on the final board."
+  },
+  {
+    "objectID": "works/project1.html#takeaways",
+    "href": "works/project1.html#takeaways",
+    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
+    "section": "Takeaways",
+    "text": "Takeaways\nPCB design was the longest and most rewarding part: going from a real specification to a manufactured board. The project also taught me that a single layout or soldering mistake can quickly cause a short circuit and damage the board and its sensors, which is why testing each block separately matters.\n📁 Project GitHub repository (KiCad files, BOM, test firmware)\n\n  Back to projects"
+  },
+  {
+    "objectID": "works/project3.html",
+    "href": "works/project3.html",
+    "title": "Dungeon Explorer: 2D adventure game in Java",
+    "section": "",
+    "text": "Context\nObject-oriented programming project, ENSEA, 2025–2026\n\n\nLanguage\nJava (Swing, AWT)\n\n\nSize\nAbout 1,000 lines across some twenty classes"
+  },
+  {
+    "objectID": "works/project3.html#at-a-glance",
+    "href": "works/project3.html#at-a-glance",
+    "title": "Dungeon Explorer: 2D adventure game in Java",
+    "section": "",
+    "text": "Context\nObject-oriented programming project, ENSEA, 2025–2026\n\n\nLanguage\nJava (Swing, AWT)\n\n\nSize\nAbout 1,000 lines across some twenty classes"
+  },
+  {
+    "objectID": "works/project3.html#the-game",
+    "href": "works/project3.html#the-game",
+    "title": "Dungeon Explorer: 2D adventure game in Java",
+    "section": "The game",
+    "text": "The game\nThe player controls a hero in a top-down dungeon. The goal is to reach the exit portal while avoiding enemies and traps, some of which move.\n\nText-file levels: each character in a level.txt file maps to a tile (wall, rock, trap, portal…). New levels can be created without touching the code.\nLives: an animated heart bar loses one life on each contact with an enemy or a trap.\nSprint: holding Shift makes the hero run and drains a stamina bar, which refills as soon as they stop running.\nScreens: title screen, game-over screen and victory screen with a “Play again” button, handled with a CardLayout.\nAnimations: the hero and enemies are animated from sprite sheets."
+  },
+  {
+    "objectID": "works/project3.html#architecture",
+    "href": "works/project3.html#architecture",
+    "title": "Dungeon Explorer: 2D adventure game in Java",
+    "section": "Architecture",
+    "text": "Architecture\nThe game runs on three independent engines, each driven by its own Swing Timer (every 50 ms):\n\nRenderEngine draws every displayable object.\nPhysicEngine handles movement and collisions: a SolidSprite blocks the way, a plain Sprite can be walked through.\nGameEngine reads keyboard input and manages the game state (win, game over).\n\n\n\n\n\n\nclassDiagram\n    class Engine {\n        &lt;&lt;interface&gt;&gt;\n    }\n    class Displayable {\n        &lt;&lt;interface&gt;&gt;\n    }\n\n    class GameEngine\n    class PhysicEngine\n    class RenderEngine\n\n    Engine &lt;|.. GameEngine\n    Engine &lt;|.. PhysicEngine\n    Engine &lt;|.. RenderEngine\n\n    class Sprite\n    class SolidSprite\n    class PortalSprite\n    class TrapSprite\n    class DynamicSprite\n    class EnemySprite\n    class MovingTrapSprite\n\n    Displayable &lt;|.. Sprite\n\n    Sprite &lt;|-- SolidSprite\n    Sprite &lt;|-- PortalSprite\n    Sprite &lt;|-- TrapSprite\n\n    SolidSprite &lt;|-- DynamicSprite\n    DynamicSprite &lt;|-- EnemySprite\n    EnemySprite &lt;|-- MovingTrapSprite\n\n    class Playground\n    class Main"
+  },
+  {
+    "objectID": "works/project3.html#object-oriented-concepts-applied",
+    "href": "works/project3.html#object-oriented-concepts-applied",
+    "title": "Dungeon Explorer: 2D adventure game in Java",
+    "section": "Object-oriented concepts applied",
+    "text": "Object-oriented concepts applied\n\nInterfaces: Displayable requires a draw method and Engine an update method, so the engines can process lists of objects without knowing their exact type.\nInheritance: Sprite holds a position and an image; SolidSprite adds a hitbox; DynamicSprite adds movement; EnemySprite and MovingTrapSprite specialise that movement.\nPolymorphism: each sprite type overrides its drawing, for example to animate a sprite sheet.\nSeparation of concerns: rendering, physics and game logic evolve independently.\n\n\n  Back to projects"
+  }
+]

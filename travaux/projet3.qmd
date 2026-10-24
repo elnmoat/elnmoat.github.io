@@ -1,0 +1,87 @@
+---
+title: "Dungeon Explorer : jeu d'aventure 2D en Java"
+date: 2026-03-01
+description: "Jeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance, menus et écrans de fin."
+categories: [Java, Swing, Programmation orientée objet]
+image: "titlepanel.png"
+title-block-banner: "titlepanel.png"
+title-block-banner-color: "white"
+---
+
+## En bref
+
+| | |
+|:--|:--|
+| **Cadre** | Projet de programmation orientée objet, ENSEA, 2025–2026 |
+| **Langage** | Java (Swing, AWT) |
+| **Taille** | Environ 1 000 lignes réparties en une vingtaine de classes |
+
+## Le jeu
+
+Le joueur dirige un héros dans un donjon vu de dessus. Il doit atteindre le **portail de sortie** en évitant les **ennemis** et les **pièges**, dont certains se déplacent.
+
+* **Niveaux en fichiers texte** : chaque caractère d'un fichier `level.txt` correspond à une tuile (mur, rocher, piège, portail…). On crée un nouveau niveau sans toucher au code.
+* **Vies** : une barre de cœurs animée perd une vie à chaque contact avec un ennemi ou un piège.
+* **Sprint** : la touche Maj fait courir le héros et vide une barre d'endurance, qui se recharge dès qu'il arrête de courir.
+* **Écrans** : écran titre, écran de défaite et écran de victoire avec bouton « Rejouer », gérés par un `CardLayout`.
+* **Animations** : le héros et les ennemis sont animés à partir de planches de sprites.
+
+## Architecture
+
+Le jeu repose sur **trois moteurs indépendants**, chacun cadencé par son propre `Timer` Swing (toutes les 50 ms) :
+
+* **`RenderEngine`** dessine tous les objets affichables.
+* **`PhysicEngine`** gère les déplacements et les collisions : un `SolidSprite` bloque le passage, un `Sprite` simple se traverse.
+* **`GameEngine`** lit le clavier et gère l'état de la partie (victoire, défaite).
+
+```{mermaid}
+classDiagram
+    class Engine {
+        <<interface>>
+    }
+    class Displayable {
+        <<interface>>
+    }
+
+    class GameEngine
+    class PhysicEngine
+    class RenderEngine
+
+    Engine <|.. GameEngine
+    Engine <|.. PhysicEngine
+    Engine <|.. RenderEngine
+
+    class Sprite
+    class SolidSprite
+    class PortalSprite
+    class TrapSprite
+    class DynamicSprite
+    class EnemySprite
+    class MovingTrapSprite
+
+    Displayable <|.. Sprite
+
+    Sprite <|-- SolidSprite
+    Sprite <|-- PortalSprite
+    Sprite <|-- TrapSprite
+
+    SolidSprite <|-- DynamicSprite
+    DynamicSprite <|-- EnemySprite
+    EnemySprite <|-- MovingTrapSprite
+
+    class Playground
+    class Main
+```
+
+## Notions de POO mises en œuvre
+
+* **Interfaces** : `Displayable` impose une méthode d'affichage et `Engine` une méthode de mise à jour, ce qui permet aux moteurs de traiter des listes d'objets sans connaître leur type exact.
+* **Héritage** : `Sprite` porte une position et une image ; `SolidSprite` ajoute une hitbox ; `DynamicSprite` ajoute le mouvement ; `EnemySprite` et `MovingTrapSprite` spécialisent ce mouvement.
+* **Polymorphisme** : chaque type de sprite redéfinit son affichage, par exemple pour animer une planche de sprites.
+* **Séparation des responsabilités** : affichage, physique et logique de jeu évoluent indépendamment.
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projets.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Retour aux projets
+  </a>
+</div>

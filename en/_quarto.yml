@@ -1,0 +1,76 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - projects.qmd
+    - contact.qmd
+    - doc.qmd
+    - works/*.qmd
+  resources:
+    - CV_moatsembellh_en.pdf
+    - works/tipe/
+
+website:
+  title: "El Nemrawi Moatsembellh"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects.qmd
+        text: Projects
+      - href: contact.qmd
+        text: Contact
+    right:
+      - icon: file-earmark-pdf
+        text: "Resume"
+        href: CV_moatsembellh_en.pdf
+      - icon : email
+        href : mailto:moatsembellh.elnemrawi@ensea.fr
+      - icon: github
+        href: https://github.com/elnmoat
+      - icon: linkedin
+        href: https://www.linkedin.com/in/elnmoat/
+      - text: "🇫🇷 Français"
+        href: https://elnmoat.github.io/
+  sidebar:
+    - id: tipe-sidebar2
+      contents:
+        - section: "Wave glider research project"
+          contents:
+            - href: works/project2.qmd
+              text: "Project overview"
+            - href: doc.qmd
+              text: "Background on the wave glider"
+      collapse-level: 2
+  page-footer:
+    left: "© 2026 El Nemrawi Moatsembellh"
+    center: "Built with [Quarto](https://quarto.org/)"
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/elnmoat/
+      - icon: github
+        href: https://github.com/elnmoat
+
+lang: en
+date-format: "MMMM YYYY"
+
+format:
+  html:
+    smooth-scroll: true
+    theme: lux
+    page-layout: full
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    lightbox: true
+    grid:
+      sidebar-width: 250px
+      body-width: 1400px
+      margin-width: 150px
+      gutter-width: 1.5rem
+    mermaid:
+      theme: default
+    css : custom.css
+    toc: false
+    anchor-sections: false

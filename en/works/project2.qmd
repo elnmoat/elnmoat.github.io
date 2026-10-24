@@ -1,0 +1,87 @@
+---
+title: "Research project: dynamic modelling of a wave glider"
+date: 2025-06-01
+description: "Study of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane's equations solved in Python (4th-order Runge-Kutta)."
+sidebar: tipe-sidebar2
+categories: [Modelling, Python, Experimentation]
+image: "waveglider.jpg"
+title-block-banner: "waveglider.jpg"
+title-block-banner-color: "black"
+---
+
+::: {.callout-note}
+This is my **TIPE**, a personal research project carried out during the two years of French preparatory classes for engineering schools (MPSI-PSI, Lycée Chaptal, Paris) and presented at the entrance exams. The theme imposed that year was **"Transition, transformation, conversion"**. The slides below are in French.
+:::
+
+## At a glance
+
+| | |
+|:--|:--|
+| **Context** | Research project, preparatory classes, 2024–2025 |
+| **Approach** | Experiments (2 prototypes), then numerical modelling |
+| **Tools** | Python (NumPy, Matplotlib), Tracker (video analysis), Kane's equations, 4th-order Runge-Kutta |
+
+## Context
+
+A **wave glider** is a surface drone that moves without fuel. It consists of a **float** on the surface, connected by a tether to a submerged **glider** fitted with pivoting wings. As the swell lifts and lowers the float, the glider's wings turn this vertical motion into horizontal thrust. This lets it stay at sea for months on oceanographic, environmental or surveillance missions.
+
+**Research question:** how can the float achieve optimal hydrodynamic motion without any external energy input, given many constraining parameters (component mass, float dimensions, tether length)?
+
+## Objectives
+
+* Measure the prototype's maximum speed under different wave conditions.
+* Find the tether length that maximises speed.
+* Numerically estimate the optimal glider-to-float mass ratio and the best angle of attack for the wings.
+
+## Experiments
+
+I built **two prototypes**. The first, tested in a bathtub with a crank-driven wave maker, validated the principle. The second (43 g glider, 153.5 g float) was tested in a **wave tank** with a motorised wave generator and foam to damp reflected waves.
+
+The motion was filmed and analysed frame by frame with **Tracker**: for each run, I fitted the wave measured on the float with a sine function and computed the prototype's average speed. I then compared three tether lengths (3.5 cm, 4.7 cm and 5.2 cm).
+
+## Modelling
+
+* **Forces**: lift and drag on the wings, weight and buoyancy, drag on the float.
+* **Kane's equations**: this method handles each body separately without bringing in constraint forces, which simplifies the derivation for a two-body system linked by a tether. It yields two coupled differential equations, on the tether angle and on the float's horizontal speed.
+* **Numerical solving**: a **4th-order Runge-Kutta** scheme written in Python, giving the float's speed over time (simulated average speed of about 0.08 m/s).
+
+## Results
+
+* Maximum speed reached for a wave height of about 2 cm.
+* Optimal tether length of about **5.2 cm** for prototype no. 2.
+* Optimal mass ratio around **1.5** and optimal wing angle of attack between **20° and 30°**.
+
+**Limitations and next steps.** The model assumes the float follows the swell perfectly, a constant tether angle and planar motion. Possible improvements are an on-board sensor to measure the motion directly and an adjustable tether length.
+
+## Presentation slides
+
+*Use the arrows to browse (slides in French). More background in the [wave glider overview](../doc.qmd).*
+
+```{python}
+#| echo: false
+#| output: asis
+
+path = "tipe/"
+
+print('```{=html}')
+print('<div id="tipeViewer" class="carousel carousel-dark slide shadow rounded-3 border" data-bs-ride="false" style="max-width: 1000px; margin: auto; background: #fff;">')
+print('  <div class="carousel-inner">')
+for i in range(22):
+    active = 'active' if i == 0 else ''
+    print(f'    <div class="carousel-item {active}">')
+    print(f'      <img src="{path}slide-{i}.jpg" class="d-block w-100" alt="Slide {i}" loading="lazy" style="height: auto; object-fit: contain;">')
+    print('    </div>')
+print('  </div>')
+print('''
+  <button class="carousel-control-prev" type="button" data-bs-target="#tipeViewer" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#tipeViewer" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+''')
+print('```')
+```

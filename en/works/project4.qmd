@@ -1,0 +1,57 @@
+---
+title: "Etch A Sketch on FPGA (VHDL)"
+date: 2026-10-01
+description: "Digital Etch A Sketch on a DE10-Nano board: decoding of two rotary encoders, HDMI video controller and frame memory in VHDL, validated in simulation and then on the board (Intel Cyclone V, Quartus)."
+image: "fpga/simulation.png"
+categories: [FPGA, VHDL, Digital design, HDMI]
+---
+
+## At a glance
+
+| | |
+|:--|:--|
+| **Context** | FPGA lab project, ENSEA, 2026–2027 |
+| **Team** | 2 students |
+| **Tools** | VHDL, Quartus Prime, NVC, Surfer, testbenches |
+
+## Goal
+
+Build a digital version of the **Etch A Sketch**: two rotary knobs move a pen that draws on a screen. The project runs on a **DE10-Nano** board (Intel Cyclone V SoC FPGA **5CSEBA6U23I7**) with a mezzanine board holding two rotary encoders and 10 LEDs. The image is sent to the board's **HDMI** output.
+
+Each block is first validated in **simulation** (VHDL testbench, NVC and Surfer), then tested on the board after synthesis and pin assignment in **Quartus**.
+
+## Architecture
+
+```{mermaid}
+flowchart LR
+    ENC_G[Left encoder] --> DEC_X[Quadrature decoder X]
+    ENC_D[Right encoder] --> DEC_Y[Quadrature decoder Y]
+    DEC_X -- "pen x" --> RAM[Dual-port<br/>frame memory]
+    DEC_Y -- "pen y" --> RAM
+    CTRL[HDMI controller<br/>HS / VS / DE] -- "pixel address" --> RAM
+    RAM -- "colour" --> ADV[ADV7513 HDMI chip]
+    CTRL -- "sync signals" --> ADV
+    ADV --> SCREEN([Screen])
+```
+
+## Quadrature encoder decoding
+
+A rotary encoder outputs two signals, A and B, shifted by a quarter period: the order in which they change gives the direction of rotation. The decoder detects rising and falling edges on A and B and increments or decrements a counter whose width is configurable (`generic`).
+
+* **Synchronisation**: A and B are asynchronous, so they go through a two-flip-flop register before any edge detection to avoid metastability.
+* **Debouncing**: on the board, a single notch made the counter jump by several steps because of mechanical bounce. I added a `G_TICK_DIV` generic that subsamples A and B (every 1 ms with a 50 MHz clock), which removes the bounce without missing any notch.
+* **Clamping**: the counter is used as the pen coordinate, so it must stay within the image instead of wrapping from one edge to the other.
+
+![Edge detection and counter increment logic](fpga/structure_encoder.png){width=80%}
+
+![Encoder simulation, clockwise then counter-clockwise rotation (Surfer)](fpga/simulation.png)
+
+## HDMI video controller
+
+The controller generates the horizontal and vertical sync signals (`HS`, `VS`) and the `Data Enable` signal expected by the ADV7513 chip, for a 720 × 480 resolution. It also outputs the address and (x, y) coordinates of the pixel being displayed, used to read the frame memory. Timings (front porch, sync, back porch) are generic parameters of the component.
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projects.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Back to projects
+  </a>
+</div>

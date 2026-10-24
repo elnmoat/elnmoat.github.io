@@ -1,0 +1,23 @@
+---
+title: "Contact"
+---
+
+Do you have a question about one of my projects, or an internship opportunity to discuss?
+
+**Feel free to send me a message!** I will get back to you as soon as possible.
+
+<div style="text-align: center; margin: 40px 0;">
+  <a href="mailto:elnmoat@gmail.com" class="btn btn-success btn-lg">
+    <i class="bi bi-envelope-fill"></i> Send me an email
+  </a>
+</div>
+
+::: {.vcard}
+
+### Contact details
+
+- {{< fa envelope >}} **Email**: [elnmoat@gmail.com](mailto:elnmoat@gmail.com)
+- {{< fa envelope >}} **School email**: [moatsembellh.elnemrawi@ensea.fr](mailto:moatsembellh.elnemrawi@ensea.fr)
+- {{< fa brands linkedin >}} **LinkedIn**: [LinkedIn profile](https://www.linkedin.com/in/elnmoat/)
+- {{< fa brands github >}} **GitHub**: [My GitHub](https://github.com/elnmoat)
+:::

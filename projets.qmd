@@ -1,0 +1,12 @@
+---
+title: "Mes Réalisations"
+listing:
+  contents: travaux      # Dossier où tu stockeras tes pages .qmd de projets
+  type: grid               # "grid" crée les cartes, "default" crée une liste
+  sort: "date desc"
+  image-height: "350px"
+  grid-columns: 2
+  fields: [image, title, description, categories] # Ce qu'on voit sur la carte
+---
+
+Cliquez sur un projet pour voir le détail, les schémas et les résultats.

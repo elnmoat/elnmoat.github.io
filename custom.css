@@ -1,0 +1,130 @@
+/* 1. Le fond de la page (Gris bleuté très léger) */
+body {
+  background-color: #f8f9fa; 
+  color: #333;
+}
+
+/* 2. Style des cartes de projets */
+.quarto-grid-item {
+  background: white !important;   /* Fond blanc pour la carte */
+  border: none !important;         /* On enlève la bordure par défaut */
+  border-radius: 12px !important;  /* Angles arrondis modernes */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombre douce */
+  transition: all 0.3s ease;       /* Animation fluide */
+  padding: 10px;
+}
+
+/* 3. Effet au survol (la carte se soulève) */
+.quarto-grid-item:hover {
+  transform: translateY(-8px);     /* Soulèvement */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Ombre plus forte */
+}
+
+/* 4. Style pour le code et LaTeX dans les cartes */
+.listing-categories .listing-category {
+  background-color: #e9ecef;
+  color: #495057;
+  border-radius: 50px; /* Badges pilules */
+}
+
+/* Animation fluide pour l'arrivée des cartes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quarto-grid-item {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Rendre la table des matières à droite plus élégante */
+#quarto-toc-toggle {
+  color: #adb5bd;
+}
+
+.sidebar nav[role=doc-toc] ul li a.active {
+  border-left: 2px solid #0d6efd; /* Barre bleue devant la section active */
+  color: #0d6efd;
+}
+
+
+/* Style personnalisé pour le bouton de CV */
+.btn-outline-primary {
+    border-radius: 30px; /* Bords très arrondis */
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: 0.4s;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2c3e50; /* Couleur sombre au survol */
+    border-color: #2c3e50;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Animation sur les cartes de la page projets */
+.quarto-grid-item .card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.quarto-grid-item .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+  cursor: pointer;
+}
+
+.callout.callout-style-default {
+  border-left-width: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .quarto-layout-panel {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* On s'assure que les images ne dépassent jamais de l'écran */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Nom dans l'en-tête : plus petit et toujours affiché en entier */
+.navbar-brand-container {
+  flex-shrink: 0;
+  max-width: none;
+}
+.navbar-brand {
+  overflow: visible;
+  text-overflow: clip;
+}
+.navbar-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  white-space: normal;
+  display: inline-block;
+  width: min-content;
+}
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  padding-left: 0.6rem !important;
+  padding-right: 0.6rem !important;
+}
+.navbar .menu-text {
+  font-size: 0.8rem;
+}

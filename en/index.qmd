@@ -1,0 +1,59 @@
+---
+title: "El Nemrawi Moatsembellh"
+subtitle: "Engineering student at ENSEA | Embedded systems & FPGA"
+format:
+  html:
+    toc: false
+    page-layout: full
+listing:
+  id: my-projects
+  contents: works
+  type: grid
+  sort: "date desc"
+  categories: false
+  image-height: "250px"
+  grid-columns: 2
+  fields: [image, title, description, categories]
+---
+
+::: {.text-center}
+# Welcome
+
+Hi! I'm **El Nemrawi**, a second-year engineering student at ENSEA (École Nationale Supérieure de l'Électronique et de ses Applications, France). I'm passionate about embedded systems, digital design on FPGA and PCB design. This site gathers my main projects.
+
+I'm looking for a **3 to 4 month internship from April 2027** in embedded systems, microelectronics or FPGA.
+
+### 🛠️ Skills & Tools
+<div style="margin: 20px 0;">
+  <span class="badge rounded-pill bg-primary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Python / C / Java</span>
+  <span class="badge rounded-pill bg-success" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Embedded Systems & FPGA</span>
+  <span class="badge rounded-pill bg-info text-dark" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">VHDL / Quartus / ARM Assembly</span>
+  <span class="badge rounded-pill bg-secondary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">STM32CubeIDE / KiCad / Matlab</span>
+</div>
+
+<div style="margin: 40px 0;">
+  <a href="CV_moatsembellh_en.pdf" class="btn btn-dark btn-lg" target="_blank">
+    <i class="bi bi-file-earmark-pdf-fill"></i> DOWNLOAD MY RESUME
+  </a>
+  <a href="contact.qmd" class="btn btn-success btn-lg mx-2">
+    <i class="bi bi-envelope"></i> CONTACT ME
+  </a>
+</div>
+<div style="margin-bottom: 50px;">
+  <a href="https://linkedin.com/in/elnmoat" class="btn btn-outline-primary">
+    <i class="bi bi-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/elnmoat" class="btn btn-outline-dark mx-2">
+    <i class="bi bi-github"></i> GitHub
+  </a>
+</div>
+
+:::
+
+---
+
+## Projects
+*A selection of the projects I have worked on during my studies.*
+
+::: {#my-projects}
+:::

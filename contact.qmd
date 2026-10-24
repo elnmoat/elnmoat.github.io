@@ -1,0 +1,25 @@
+---
+title: "Contact"
+---
+
+
+
+Vous avez une question sur l'un de mes projets ou vous souhaitez discuter d'une collaboration éventuelle ?
+
+**N'hésitez pas à m'envoyer un message !** Je vous répondrai dans les plus brefs délais.
+
+<div style="text-align: center; margin: 40px 0;">
+  <a href="mailto:elnmoat@gmail.com" class="btn btn-success btn-lg">
+    <i class="bi bi-envelope-fill"></i> M'envoyer un e-mail
+  </a>
+</div>
+
+::: {.vcard}
+
+### Mes coordonnées directes
+
+- {{< fa envelope >}} **Email** : [elnmoat@gmail.com](mailto:elnmoat@gmail.com)
+- {{< fa envelope >}} **Email** : [moatsembellh.elnemrawi@ensea.fr](mailto:moatsembellh.elnemrawi@ensea.fr)
+- {{< fa brands linkedin >}} **LinkedIn** : [Profil LinkedIn](https://www.linkedin.com/in/elnmoat/)
+- {{< fa brands github >}} **GitHub** : [Mon GitHub](https://github.com/elnmoat)
+:::

@@ -1,0 +1,76 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - projets.qmd
+    - contact.qmd
+    - doc.qmd
+    - travaux/*.qmd
+  resources:
+    - CV_moatsembellh.pdf
+    - travaux/tipe/
+
+website:
+  title: "El Nemrawi Moatsembellh"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: projets.qmd
+        text: Projets
+      - href: contact.qmd
+        text: Contact
+    right:
+      - icon: file-earmark-pdf
+        text: "Mon CV"
+        href: CV_moatsembellh.pdf
+      - icon : email
+        href : mailto:moatsembellh.elnemrawi@ensea.fr
+      - icon: github
+        href: https://github.com/elnmoat
+      - icon: linkedin
+        href: https://www.linkedin.com/in/elnmoat/
+      - text: "🇬🇧 English"
+        href: https://elnmoat.github.io/en/
+  sidebar:
+    - id: tipe-sidebar2
+      contents:
+        - section: "Mon TIPE : Waveglider"
+          contents:
+            - href: travaux/projet2.qmd
+              text: "Présentation du TIPE"
+            - href: doc.qmd
+              text: "Documentation sur le sujet"
+      collapse-level: 2
+  page-footer: 
+    left: "© 2026 El Nemrawi Moatsembellh"
+    center: "Portfolio propulsé par [Quarto](https://quarto.org/)"
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/elnmoat/
+      - icon: github
+        href: https://github.com/elnmoat
+
+lang: fr
+date-format: "MMMM YYYY"
+
+format:
+  html:
+    smooth-scroll: true
+    theme: lux
+    page-layout: full
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    lightbox: true
+    grid:
+      sidebar-width: 250px
+      body-width: 1400px  # Mets une grande valeur en px au lieu de 100%
+      margin-width: 150px
+      gutter-width: 1.5rem
+    mermaid:
+      theme: default
+    css : custom.css
+    toc: false
+    anchor-sections: false

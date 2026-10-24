@@ -1,0 +1,35 @@
+---
+title: "Background on the wave glider"
+---
+
+[Explanatory video on YouTube](https://youtu.be/m7gmf4Mfba4?si=N-2qKUcW1980YK0m)
+
+**Liquid Robotics** is an American company specialising in autonomous marine robotics. It designs and builds the *Wave Glider*, an unmanned surface vehicle (USV) powered by solar and wave energy: it harvests the energy of ocean waves for propulsion. It can therefore spend several months at sea in a row, collecting and transmitting ocean data.
+
+Its applications are mainly in defence, maritime surveillance, oil and gas, and scientific research, for example:
+
+- Monitoring of oil and gas infrastructure, of the atmosphere, and seismic and environmental monitoring
+- Defence (anti-submarine warfare, intelligence, surveillance and reconnaissance)
+- Maritime surveillance (detection of surface vessels for coastal and border security)
+- Scientific research (meteorological, climate and seismic data in the open ocean, ocean acidification, environmental monitoring, fish and ecosystem monitoring)
+
+It carries batteries and atmospheric and oceanographic sensors, seismic sensors for earthquake and tsunami detection, as well as cameras and hydrophones for security, surveillance, research or protection of the marine environment.
+
+Since 2007, Wave Gliders have been deployed from the Arctic to the Southern Ocean, for example to track great white sharks, to patrol marine protected areas against illegal fishing, and to assess the health of the Great Barrier Reef. They have also collected data during extreme storms and detected and tracked a diesel submarine during the *Unmanned Warrior* exercise in October 2016.
+
+### Design
+
+The *Wave Glider* is made of two parts:
+
+- The **float**, roughly the size and shape of a large surfboard, which moves on the ocean surface;
+- The **wing rack** (glider), suspended below on a 4 to 8 metre tether, fitted with a rudder for steering and a thruster providing extra thrust in extreme conditions (turbulence, no current or strong current).
+
+<img src="doc.assets/image-20260314223356117.png" alt="Wave glider float" style="zoom:15%;" /> <img src="doc.assets/image-20260314223203612.png" alt="Wave glider wings" style="zoom:35%;" />
+
+The wings can rotate within a range of about 60 degrees, so that their inclination always favours forward thrust on the float.
+
+The *Wave Glider* exploits the difference in motion between the ocean surface and the calmer water below to create forward propulsion. More precisely, a lift force combined with a drag force, mainly due to the float being moved up and down by the swell, ensures that the wings always pull the float forward.
+
+No fuel is needed, which allows it to stay at sea for long periods.
+
+On 7 September 2017, Liquid Robotics announced a new-generation *Wave Glider* designed for very rough seas ([sea state 6 and above](https://en.wikipedia.org/wiki/Sea_state)) and cold, high-latitude waters, with a larger sensor payload and more energy and storage capacity for long maritime surveillance and environmental observation missions.

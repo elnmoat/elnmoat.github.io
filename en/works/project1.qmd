@@ -1,0 +1,97 @@
+---
+title: "PC_BOT: autonomous mobile robot with wireless telemetry"
+date: 2026-05-01
+page-layout: full
+description: "Mobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI), telemetry to a base station."
+image: "PCBOTcarte.jpg"
+categories: [PCB, KiCad, STM32, C, Embedded systems]
+title-block-banner: "PCBOTcarte2.jpg"
+title-block-banner-color: "white"
+---
+
+## At a glance
+
+| | |
+|:--|:--|
+| **Context** | First-year project, ENSEA, 2025–2026 |
+| **Team** | 5 students |
+| **My role** | PCB schematic and layout, firmware and testing of the ToF sensor and radio module |
+| **Tools** | KiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub |
+
+## Goal
+
+PC_BOT is a small wheeled robot designed to **map a room**. Several robots position themselves along the walls, move autonomously while avoiding obstacles and share their positions over radio. Each robot continuously sends its distances to obstacles, orientation, speed and acceleration to a base station, which builds a 2D map of the room.
+
+## Requirements
+
+| Function | Chosen solution |
+|:--|:--|
+| Autonomous motion | 2 DC gear motors driven by PWM through a **DRV8411A** driver |
+| Obstacle sensing | **VL53L0X** time-of-flight sensor (I2C) |
+| Orientation and motion | **LSM6DSOX** inertial measurement unit (I2C) |
+| Communication | **nRF24L01+** 2.4 GHz radio module (SPI) |
+| Power | **18650** Li-ion battery (3400 mAh), **BQ25896** charger over USB-C, 3.3 V regulator |
+| Main controller | **STM32G431KBT6** microcontroller |
+
+## Hardware architecture
+
+```{mermaid}
+graph LR
+    MCU[STM32G431KBT6]
+
+    subgraph BUS_I2C [I2C bus]
+        TOF[VL53L0X ToF sensor]
+        IMU[LSM6DSOX IMU]
+        BQ[BQ25896 charger]
+    end
+
+    subgraph BUS_SPI [SPI bus]
+        NRF[nRF24L01+ module]
+    end
+
+    subgraph POWER [Power]
+        BAT[18650 battery]
+        USB[USB-C port]
+    end
+
+    subgraph MOTORS [Motors]
+        DRV[DRV8411A driver]
+        M1[DC motors]
+    end
+
+    MCU -- "SDA / SCL" --- BUS_I2C
+    MCU -- "MOSI / MISO / SCK" --- BUS_SPI
+    MCU -- "PWM" --- DRV
+    DRV --- M1
+
+    USB -- "Charge" --- BQ
+    BAT -- "Energy" --- BQ
+    BQ -- "VCC" --- MCU
+
+    NRF -. "2.4 GHz radio" .-> Station[Base station]
+```
+
+The sensors (ToF, IMU, charger) share an **I2C bus** with 4.7 kΩ pull-ups. The radio module sits on a faster, full-duplex **SPI bus** to stream data continuously. The STM32 is programmed and debugged through an **ST-LINK** (SWD) connector.
+
+## What I did
+
+**PCB design (KiCad).** Full schematic and layout of a **4-layer** SMD board: microcontroller, Li-ion charging chain (BQ25896 with its 1 µH inductor, USB-C connector), 3.3 V regulation, motor driver, sensor and radio connectors, status LEDs and buttons. Each component choice was checked against its datasheet.
+
+**C firmware (STM32CubeIDE).** Before the final board was ready, each sensor was validated on an STM32 development board:
+
+* **ToF sensor**: distance readings over I2C. The sensor detects obstacles from about 3 cm to just under one metre, with a range that depends on ambient light.
+* **Radio link**: communication between two STM32 boards, each fitted with an nRF24L01+, in transmit and receive mode, with received frames displayed in PuTTY.
+
+**Assembly and bring-up.** Soldering of the SMD components, then sensor-by-sensor testing on the final board.
+
+## Takeaways
+
+PCB design was the longest and most rewarding part: going from a real specification to a manufactured board. The project also taught me that a single layout or soldering mistake can quickly cause a short circuit and damage the board and its sensors, which is why testing each block separately matters.
+
+📁 [Project GitHub repository](https://github.com/rahim974/2526_projet1a_pcbot1) (KiCad files, BOM, test firmware)
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projects.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Back to projects
+  </a>
+</div>

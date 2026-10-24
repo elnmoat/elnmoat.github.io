@@ -1,0 +1,87 @@
+---
+title: "Dungeon Explorer: 2D adventure game in Java"
+date: 2026-03-01
+description: "2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end screens."
+categories: [Java, Swing, Object-oriented programming]
+image: "titlepanel.png"
+title-block-banner: "titlepanel.png"
+title-block-banner-color: "white"
+---
+
+## At a glance
+
+| | |
+|:--|:--|
+| **Context** | Object-oriented programming project, ENSEA, 2025–2026 |
+| **Language** | Java (Swing, AWT) |
+| **Size** | About 1,000 lines across some twenty classes |
+
+## The game
+
+The player controls a hero in a top-down dungeon. The goal is to reach the **exit portal** while avoiding **enemies** and **traps**, some of which move.
+
+* **Text-file levels**: each character in a `level.txt` file maps to a tile (wall, rock, trap, portal…). New levels can be created without touching the code.
+* **Lives**: an animated heart bar loses one life on each contact with an enemy or a trap.
+* **Sprint**: holding Shift makes the hero run and drains a stamina bar, which refills as soon as they stop running.
+* **Screens**: title screen, game-over screen and victory screen with a "Play again" button, handled with a `CardLayout`.
+* **Animations**: the hero and enemies are animated from sprite sheets.
+
+## Architecture
+
+The game runs on **three independent engines**, each driven by its own Swing `Timer` (every 50 ms):
+
+* **`RenderEngine`** draws every displayable object.
+* **`PhysicEngine`** handles movement and collisions: a `SolidSprite` blocks the way, a plain `Sprite` can be walked through.
+* **`GameEngine`** reads keyboard input and manages the game state (win, game over).
+
+```{mermaid}
+classDiagram
+    class Engine {
+        <<interface>>
+    }
+    class Displayable {
+        <<interface>>
+    }
+
+    class GameEngine
+    class PhysicEngine
+    class RenderEngine
+
+    Engine <|.. GameEngine
+    Engine <|.. PhysicEngine
+    Engine <|.. RenderEngine
+
+    class Sprite
+    class SolidSprite
+    class PortalSprite
+    class TrapSprite
+    class DynamicSprite
+    class EnemySprite
+    class MovingTrapSprite
+
+    Displayable <|.. Sprite
+
+    Sprite <|-- SolidSprite
+    Sprite <|-- PortalSprite
+    Sprite <|-- TrapSprite
+
+    SolidSprite <|-- DynamicSprite
+    DynamicSprite <|-- EnemySprite
+    EnemySprite <|-- MovingTrapSprite
+
+    class Playground
+    class Main
+```
+
+## Object-oriented concepts applied
+
+* **Interfaces**: `Displayable` requires a draw method and `Engine` an update method, so the engines can process lists of objects without knowing their exact type.
+* **Inheritance**: `Sprite` holds a position and an image; `SolidSprite` adds a hitbox; `DynamicSprite` adds movement; `EnemySprite` and `MovingTrapSprite` specialise that movement.
+* **Polymorphism**: each sprite type overrides its drawing, for example to animate a sprite sheet.
+* **Separation of concerns**: rendering, physics and game logic evolve independently.
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projects.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Back to projects
+  </a>
+</div>

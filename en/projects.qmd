@@ -1,0 +1,12 @@
+---
+title: "Projects"
+listing:
+  contents: works
+  type: grid
+  sort: "date desc"
+  image-height: "350px"
+  grid-columns: 2
+  fields: [image, title, description, categories]
+---
+
+Click on a project to see the details, diagrams and results.
