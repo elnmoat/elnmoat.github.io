@@ -142,7 +142,40 @@
     "href": "doc.html",
     "title": "Background on the wave glider",
     "section": "",
-    "text": "Explanatory video on YouTube\nLiquid Robotics is an American company specialising in autonomous marine robotics. It designs and builds the Wave Glider, an unmanned surface vehicle (USV) powered by solar and wave energy: it harvests the energy of ocean waves for propulsion. It can therefore spend several months at sea in a row, collecting and transmitting ocean data.\nIts applications are mainly in defence, maritime surveillance, oil and gas, and scientific research, for example:\n\nMonitoring of oil and gas infrastructure, of the atmosphere, and seismic and environmental monitoring\nDefence (anti-submarine warfare, intelligence, surveillance and reconnaissance)\nMaritime surveillance (detection of surface vessels for coastal and border security)\nScientific research (meteorological, climate and seismic data in the open ocean, ocean acidification, environmental monitoring, fish and ecosystem monitoring)\n\nIt carries batteries and atmospheric and oceanographic sensors, seismic sensors for earthquake and tsunami detection, as well as cameras and hydrophones for security, surveillance, research or protection of the marine environment.\nSince 2007, Wave Gliders have been deployed from the Arctic to the Southern Ocean, for example to track great white sharks, to patrol marine protected areas against illegal fishing, and to assess the health of the Great Barrier Reef. They have also collected data during extreme storms and detected and tracked a diesel submarine during the Unmanned Warrior exercise in October 2016.\n\nDesign\nThe Wave Glider is made of two parts:\n\nThe float, roughly the size and shape of a large surfboard, which moves on the ocean surface;\nThe wing rack (glider), suspended below on a 4 to 8 metre tether, fitted with a rudder for steering and a thruster providing extra thrust in extreme conditions (turbulence, no current or strong current).\n\n \nThe wings can rotate within a range of about 60 degrees, so that their inclination always favours forward thrust on the float.\nThe Wave Glider exploits the difference in motion between the ocean surface and the calmer water below to create forward propulsion. More precisely, a lift force combined with a drag force, mainly due to the float being moved up and down by the swell, ensures that the wings always pull the float forward.\nNo fuel is needed, which allows it to stay at sea for long periods.\nOn 7 September 2017, Liquid Robotics announced a new-generation Wave Glider designed for very rough seas (sea state 6 and above) and cold, high-latitude waters, with a larger sensor payload and more energy and storage capacity for long maritime surveillance and environmental observation missions.",
+    "text": "Explanatory video on YouTube",
+    "crumbs": [
+      "Wave glider research project",
+      "Background on the wave glider"
+    ]
+  },
+  {
+    "objectID": "doc.html#overview",
+    "href": "doc.html#overview",
+    "title": "Background on the wave glider",
+    "section": "Overview",
+    "text": "Overview\nLiquid Robotics is an American company specialising in autonomous marine robotics. It designs and builds the Wave Glider, an unmanned surface vehicle (USV) powered by solar and wave energy: it harvests the energy of ocean waves for propulsion. It can therefore spend several months at sea in a row, collecting and transmitting ocean data.\nIts applications are mainly in defence, maritime surveillance, oil and gas, and scientific research, for example:\n\nMonitoring of oil and gas infrastructure, of the atmosphere, and seismic and environmental monitoring\nDefence (anti-submarine warfare, intelligence, surveillance and reconnaissance)\nMaritime surveillance (detection of surface vessels for coastal and border security)\nScientific research (meteorological, climate and seismic data in the open ocean, ocean acidification, environmental monitoring, fish and ecosystem monitoring)\n\nIt carries batteries and atmospheric and oceanographic sensors, seismic sensors for earthquake and tsunami detection, as well as cameras and hydrophones for security, surveillance, research or protection of the marine environment.\nSince 2007, Wave Gliders have been deployed from the Arctic to the Southern Ocean, for example to track great white sharks with researcher Barbara Block (Hopkins Marine Station), to patrol marine protected areas against illegal fishing for the UK Foreign & Commonwealth Office, and to assess the health of the Great Barrier Reef. They have also collected data during extreme storms and detected and tracked a diesel submarine during the Unmanned Warrior exercise in October 2016.",
+    "crumbs": [
+      "Wave glider research project",
+      "Background on the wave glider"
+    ]
+  },
+  {
+    "objectID": "doc.html#design",
+    "href": "doc.html#design",
+    "title": "Background on the wave glider",
+    "section": "Design",
+    "text": "Design\nThe Wave Glider is made of two parts:\n\nThe float, roughly the size and shape of a large surfboard, which moves on the ocean surface;\nThe wing rack (glider), suspended below on a 4 to 8 metre tether, fitted with a rudder for steering and a thruster providing extra thrust in extreme conditions (turbulence, no current or strong current).\n\n \nThe wings can rotate within a range of about 60 degrees, so that their inclination always favours forward thrust on the float.\nThe Wave Glider exploits the difference in motion between the ocean surface and the calmer water below to create forward propulsion. More precisely, when the swell lifts and lowers the float, the glider rises and falls with it: the lift and drag acting on the wings then produce a force that always pulls the float forward.\nNo fuel is needed, which allows it to stay at sea for long periods.",
+    "crumbs": [
+      "Wave glider research project",
+      "Background on the wave glider"
+    ]
+  },
+  {
+    "objectID": "doc.html#later-developments",
+    "href": "doc.html#later-developments",
+    "title": "Background on the wave glider",
+    "section": "Later developments",
+    "text": "Later developments\nOn 7 September 2017, Liquid Robotics announced a new-generation Wave Glider designed for very rough seas (sea state 6 and above) and cold, high-latitude waters, with a larger sensor payload and more energy and storage capacity for long maritime surveillance and environmental observation missions.",
     "crumbs": [
       "Wave glider research project",
       "Background on the wave glider"
