@@ -60,14 +60,14 @@ format:
   html:
     smooth-scroll: true
     theme: lux
-    page-layout: full
+    page-layout: article
     code-copy: true
     code-overflow: wrap
     highlight-style: github
     lightbox: true
     grid:
       sidebar-width: 250px
-      body-width: 1400px  # Mets une grande valeur en px au lieu de 100%
+      body-width: 900px
       margin-width: 150px
       gutter-width: 1.5rem
     mermaid:

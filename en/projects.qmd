@@ -1,12 +1,13 @@
 ---
+page-layout: full
 title: "Projects"
+description: "Projects from engineering school and preparatory classes, newest first."
 listing:
   contents: works
   type: grid
   sort: "date desc"
-  image-height: "350px"
-  grid-columns: 2
+  image-height: "200px"
+  grid-columns: 3
   fields: [image, title, description, categories]
 ---
 
-Click on a project to see the details, diagrams and results.

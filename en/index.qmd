@@ -21,8 +21,8 @@ listing:
   <div>
     <p class="home-kicker">Electronic engineering student · ENSEA</p>
     <h1 class="home-name">Moatsembellh El Nemrawi</h1>
-    <p class="home-lead">I design embedded systems end to end: custom PCBs, C firmware on STM32 and digital logic on FPGA.</p>
-    <div class="home-avail"><span class="dot"></span>Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA or microelectronics</div>
+    <p class="home-lead">Second-year student at ENSEA, interested in embedded systems, FPGA, microelectronics and power electronics.</p>
+    <div class="home-avail"><span class="dot"></span>Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA, microelectronics or power electronics</div>
     <div class="home-actions">
       <a href="CV_moatsembellh_en.pdf" class="btn btn-dark" target="_blank"><i class="bi bi-file-earmark-pdf"></i> Resume</a>
       <a href="contact.html" class="btn btn-outline-dark"><i class="bi bi-envelope"></i> Contact</a>

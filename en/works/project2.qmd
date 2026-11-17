@@ -5,9 +5,9 @@ description: "Study of a marine drone propelled only by waves: two prototypes te
 sidebar: tipe-sidebar2
 categories: [Modelling, Python, Experimentation]
 image: "waveglider.jpg"
-title-block-banner: "waveglider.jpg"
-title-block-banner-color: "black"
 ---
+
+![](waveglider.jpg){.project-cover .nolightbox}
 
 ::: {.callout-note}
 This is my **TIPE**, a personal research project carried out during the two years of French preparatory classes for engineering schools (MPSI-PSI, Lycée Chaptal, Paris) and presented at the entrance exams. The theme imposed that year was **"Transition, transformation, conversion"**. The slides below are in French.

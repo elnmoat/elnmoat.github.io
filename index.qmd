@@ -21,8 +21,8 @@ listing:
   <div>
     <p class="home-kicker">Élève ingénieur en électronique · ENSEA</p>
     <h1 class="home-name">Moatsembellh El Nemrawi</h1>
-    <p class="home-lead">Je conçois des systèmes embarqués de bout en bout : cartes électroniques sur mesure, firmware C sur STM32 et logique numérique sur FPGA.</p>
-    <div class="home-avail"><span class="dot"></span>Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA ou microélectronique</div>
+    <p class="home-lead">Étudiant en 2ᵉ année à l'ENSEA, je m'intéresse aux systèmes embarqués, au FPGA, à la microélectronique et à l'électronique de puissance.</p>
+    <div class="home-avail"><span class="dot"></span>Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA, microélectronique ou électronique de puissance</div>
     <div class="home-actions">
       <a href="CV_moatsembellh.pdf" class="btn btn-dark" target="_blank"><i class="bi bi-file-earmark-pdf"></i> Mon CV</a>
       <a href="contact.html" class="btn btn-outline-dark"><i class="bi bi-envelope"></i> Contact</a>

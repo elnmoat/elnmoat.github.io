@@ -4,9 +4,9 @@ date: 2026-03-01
 description: "Jeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance, menus et écrans de fin."
 categories: [Java, Swing, Programmation orientée objet]
 image: "titlepanel.png"
-title-block-banner: "titlepanel.png"
-title-block-banner-color: "white"
 ---
+
+![](titlepanel.png){.project-cover .nolightbox}
 
 ## En bref
 

@@ -5,9 +5,9 @@ description: "Étude d'un drone marin propulsé uniquement par la houle : deux p
 sidebar: tipe-sidebar2
 categories: [Modélisation, Python, Expérimentation, CPGE]
 image: "waveglider.jpg"
-title-block-banner: "waveglider.jpg"
-title-block-banner-color: "black"
 ---
+
+![](waveglider.jpg){.project-cover .nolightbox}
 
 ::: {.callout-note}
 Le TIPE est un travail de recherche personnel mené en classes préparatoires (MPSI-PSI, lycée Chaptal) et présenté aux concours. Le thème imposé de l'année était **« Transition, transformation, conversion »**.

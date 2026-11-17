@@ -42,18 +42,11 @@
     "text": "Progress\nIMU validation. I brought up the STEVAL-MKI227KA evaluation board (LSM6DSV16X) on a NUCLEO-F410RB over I2C:\n\nI2C bus scan and sensor identification through its WHO_AM_I register;\naccelerometer and gyroscope configured at 30 Hz by reading and writing registers directly with the HAL;\nacceleration, angular rate and temperature streamed over the serial port, with a wiring and troubleshooting guide for the team.\n\nNext steps: VL53L9CX LiDAR integration, then PCB design.\n📁 Project GitHub repository\n\n  Back to projects"
   },
   {
-    "objectID": "works/project3.html",
-    "href": "works/project3.html",
-    "title": "Dungeon Explorer: 2D adventure game in Java",
-    "section": "",
-    "text": "Context\nObject-oriented programming project, ENSEA, 2025–2026\n\n\nLanguage\nJava (Swing, AWT)\n\n\nSize\nAbout 1,000 lines across some twenty classes"
-  },
-  {
     "objectID": "works/project3.html#at-a-glance",
     "href": "works/project3.html#at-a-glance",
     "title": "Dungeon Explorer: 2D adventure game in Java",
-    "section": "",
-    "text": "Context\nObject-oriented programming project, ENSEA, 2025–2026\n\n\nLanguage\nJava (Swing, AWT)\n\n\nSize\nAbout 1,000 lines across some twenty classes"
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\nContext\nObject-oriented programming project, ENSEA, 2025–2026\n\n\nLanguage\nJava (Swing, AWT)\n\n\nSize\nAbout 1,000 lines across some twenty classes"
   },
   {
     "objectID": "works/project3.html#the-game",
@@ -77,18 +70,11 @@
     "text": "Object-oriented concepts applied\n\nInterfaces: Displayable requires a draw method and Engine an update method, so the engines can process lists of objects without knowing their exact type.\nInheritance: Sprite holds a position and an image; SolidSprite adds a hitbox; DynamicSprite adds movement; EnemySprite and MovingTrapSprite specialise that movement.\nPolymorphism: each sprite type overrides its drawing, for example to animate a sprite sheet.\nSeparation of concerns: rendering, physics and game logic evolve independently.\n\n\n  Back to projects"
   },
   {
-    "objectID": "works/project1.html",
-    "href": "works/project1.html",
-    "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
-    "section": "",
-    "text": "Context\nFirst-year project, ENSEA, 2025–2026\n\n\nTeam\n5 students\n\n\nMy role\nPCB schematic and layout, firmware and testing of the ToF sensor and radio module\n\n\nTools\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
-  },
-  {
     "objectID": "works/project1.html#at-a-glance",
     "href": "works/project1.html#at-a-glance",
     "title": "PC_BOT: autonomous mobile robot with wireless telemetry",
-    "section": "",
-    "text": "Context\nFirst-year project, ENSEA, 2025–2026\n\n\nTeam\n5 students\n\n\nMy role\nPCB schematic and layout, firmware and testing of the ToF sensor and radio module\n\n\nTools\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\n\n\n\n\nContext\nFirst-year project, ENSEA, 2025–2026\n\n\nTeam\n5 students\n\n\nMy role\nPCB schematic and layout, firmware and testing of the ToF sensor and radio module\n\n\nTools\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
   },
   {
     "objectID": "works/project1.html#goal",
@@ -130,14 +116,14 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Do you have a question about one of my projects, or an internship opportunity to discuss?\nFeel free to send me a message! I will get back to you as soon as possible.\n\n  Send me an email \n\n\nContact details\n\n Email: elnmoat@gmail.com\n School email: moatsembellh.elnemrawi@ensea.fr\n LinkedIn: LinkedIn profile\n GitHub: My GitHub"
+    "text": "Emailelnmoat@gmail.com\n  School emailmoatsembellh.elnemrawi@ensea.fr\n  LinkedInlinkedin.com/in/elnmoat\n  GitHubgithub.com/elnmoat\n\n Download my resume"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Moatsembellh El Nemrawi",
     "section": "",
-    "text": "Electronic engineering student · ENSEA\n    \n    I design embedded systems end to end: custom PCBs, C firmware on STM32 and digital logic on FPGA.\n    Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA or microelectronics\n    \n       Resume\n       Contact"
+    "text": "Electronic engineering student · ENSEA\n    \n    Second-year student at ENSEA, interested in embedded systems, FPGA, microelectronics and power electronics.\n    Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA, microelectronics or power electronics\n    \n       Resume\n       Contact"
   },
   {
     "objectID": "index.html#selected-projects",
@@ -158,7 +144,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Click on a project to see the details, diagrams and results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHandheld 3D LiDAR scanner (in progress)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nEmbedded systems\n\n\n\nSecond-year team project (6 students): a handheld scanner that maps a room in 2D and 3D, from a custom PCB built around an STM32 and the VL53L9CX LiDAR to the visualisation…\n\n\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nDigital design\n\nHDMI\n\n\n\nComplete digital Etch A Sketch on a DE10-Nano board: rotary encoders, 720×480 HDMI controller, dual-port frame memory and screen clearing, designed in VHDL, simulated and…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nEmbedded systems\n\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI)…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n\nJava\n\nSwing\n\nObject-oriented programming\n\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\n\nModelling\n\nPython\n\nExperimentation\n\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane’s equations solved in Python…\n\n\n\n\n\nNo matching items"
+    "text": "Handheld 3D LiDAR scanner (in progress)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nEmbedded systems\n\n\n\nSecond-year team project (6 students): a handheld scanner that maps a room in 2D and 3D, from a custom PCB built around an STM32 and the VL53L9CX LiDAR to the visualisation…\n\n\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nDigital design\n\nHDMI\n\n\n\nComplete digital Etch A Sketch on a DE10-Nano board: rotary encoders, 720×480 HDMI controller, dual-port frame memory and screen clearing, designed in VHDL, simulated and…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nEmbedded systems\n\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI)…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n\nJava\n\nSwing\n\nObject-oriented programming\n\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\n\nModelling\n\nPython\n\nExperimentation\n\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane’s equations solved in Python…\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "doc.html",
@@ -202,18 +188,6 @@
     "crumbs": [
       "Wave glider research project",
       "Background on the wave glider"
-    ]
-  },
-  {
-    "objectID": "works/project2.html",
-    "href": "works/project2.html",
-    "title": "Research project: dynamic modelling of a wave glider",
-    "section": "",
-    "text": "Note\n\n\n\nThis is my TIPE, a personal research project carried out during the two years of French preparatory classes for engineering schools (MPSI-PSI, Lycée Chaptal, Paris) and presented at the entrance exams. The theme imposed that year was “Transition, transformation, conversion”. The slides below are in French.",
-    "crumbs": [
-      "Home",
-      "Wave glider research project",
-      "Project overview"
     ]
   },
   {

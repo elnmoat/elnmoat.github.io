@@ -42,18 +42,11 @@
     "text": "Avancement\nValidation de la centrale inertielle. J’ai mis en service la carte d’évaluation STEVAL-MKI227KA (LSM6DSV16X) sur une NUCLEO-F410RB en I2C :\n\nscan du bus I2C et identification du capteur par son registre WHO_AM_I ;\nconfiguration de l’accéléromètre et du gyroscope à 30 Hz par lecture et écriture directe des registres avec la HAL ;\naffichage des accélérations, vitesses angulaires et température sur le port série, avec un guide de câblage et de dépannage pour l’équipe.\n\nProchaines étapes : intégration du LiDAR VL53L9CX, puis conception du PCB.\n📁 Dépôt GitHub du projet\n\n  Retour aux projets"
   },
   {
-    "objectID": "travaux/projet3.html",
-    "href": "travaux/projet3.html",
-    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
-    "section": "",
-    "text": "Cadre\nProjet de programmation orientée objet, ENSEA, 2025–2026\n\n\nLangage\nJava (Swing, AWT)\n\n\nTaille\nEnviron 1 000 lignes réparties en une vingtaine de classes"
-  },
-  {
     "objectID": "travaux/projet3.html#en-bref",
     "href": "travaux/projet3.html#en-bref",
     "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
-    "section": "",
-    "text": "Cadre\nProjet de programmation orientée objet, ENSEA, 2025–2026\n\n\nLangage\nJava (Swing, AWT)\n\n\nTaille\nEnviron 1 000 lignes réparties en une vingtaine de classes"
+    "section": "En bref",
+    "text": "En bref\n\n\n\n\n\n\n\nCadre\nProjet de programmation orientée objet, ENSEA, 2025–2026\n\n\nLangage\nJava (Swing, AWT)\n\n\nTaille\nEnviron 1 000 lignes réparties en une vingtaine de classes"
   },
   {
     "objectID": "travaux/projet3.html#le-jeu",
@@ -77,18 +70,11 @@
     "text": "Notions de POO mises en œuvre\n\nInterfaces : Displayable impose une méthode d’affichage et Engine une méthode de mise à jour, ce qui permet aux moteurs de traiter des listes d’objets sans connaître leur type exact.\nHéritage : Sprite porte une position et une image ; SolidSprite ajoute une hitbox ; DynamicSprite ajoute le mouvement ; EnemySprite et MovingTrapSprite spécialisent ce mouvement.\nPolymorphisme : chaque type de sprite redéfinit son affichage, par exemple pour animer une planche de sprites.\nSéparation des responsabilités : affichage, physique et logique de jeu évoluent indépendamment.\n\n\n  Retour aux projets"
   },
   {
-    "objectID": "travaux/projet1.html",
-    "href": "travaux/projet1.html",
-    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
-    "section": "",
-    "text": "Cadre\nProjet de 1ʳᵉ année, ENSEA, 2025–2026\n\n\nÉquipe\n5 étudiants\n\n\nMon rôle\nSchéma et routage du PCB, firmware et tests du capteur ToF et du module radio\n\n\nOutils\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
-  },
-  {
     "objectID": "travaux/projet1.html#en-bref",
     "href": "travaux/projet1.html#en-bref",
     "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
-    "section": "",
-    "text": "Cadre\nProjet de 1ʳᵉ année, ENSEA, 2025–2026\n\n\nÉquipe\n5 étudiants\n\n\nMon rôle\nSchéma et routage du PCB, firmware et tests du capteur ToF et du module radio\n\n\nOutils\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+    "section": "En bref",
+    "text": "En bref\n\n\n\n\n\n\n\nCadre\nProjet de 1ʳᵉ année, ENSEA, 2025–2026\n\n\nÉquipe\n5 étudiants\n\n\nMon rôle\nSchéma et routage du PCB, firmware et tests du capteur ToF et du module radio\n\n\nOutils\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
   },
   {
     "objectID": "travaux/projet1.html#objectif",
@@ -130,14 +116,14 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Vous avez une question sur l’un de mes projets ou vous souhaitez discuter d’une collaboration éventuelle ?\nN’hésitez pas à m’envoyer un message ! Je vous répondrai dans les plus brefs délais.\n\n  M’envoyer un e-mail \n\n\nMes coordonnées directes\n\n Email : elnmoat@gmail.com\n Email : moatsembellh.elnemrawi@ensea.fr\n LinkedIn : Profil LinkedIn\n GitHub : Mon GitHub"
+    "text": "E-mailelnmoat@gmail.com\n  E-mail ENSEAmoatsembellh.elnemrawi@ensea.fr\n  LinkedInlinkedin.com/in/elnmoat\n  GitHubgithub.com/elnmoat\n\n Télécharger mon CV"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Moatsembellh El Nemrawi",
     "section": "",
-    "text": "Élève ingénieur en électronique · ENSEA\n    \n    Je conçois des systèmes embarqués de bout en bout : cartes électroniques sur mesure, firmware C sur STM32 et logique numérique sur FPGA.\n    Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA ou microélectronique\n    \n       Mon CV\n       Contact"
+    "text": "Élève ingénieur en électronique · ENSEA\n    \n    Étudiant en 2ᵉ année à l'ENSEA, je m'intéresse aux systèmes embarqués, au FPGA, à la microélectronique et à l'électronique de puissance.\n    Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA, microélectronique ou électronique de puissance\n    \n       Mon CV\n       Contact"
   },
   {
     "objectID": "index.html#projets",
@@ -156,9 +142,9 @@
   {
     "objectID": "projets.html",
     "href": "projets.html",
-    "title": "Mes Réalisations",
+    "title": "Projets",
     "section": "",
-    "text": "Cliquez sur un projet pour voir le détail, les schémas et les résultats.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScanner 3D portable à LiDAR (en cours)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nSystèmes embarqués\n\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et du LiDAR VL53L9CX jusqu’à…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nConception numérique\n\nHDMI\n\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement, conçus en VHDL, simulés puis validés…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nSystèmes embarqués\n\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\n\nJava\n\nSwing\n\nProgrammation orientée objet\n\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\n\nModélisation\n\nPython\n\nExpérimentation\n\nCPGE\n\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu…\n\n\n\n\n\nAucun article correspondant"
+    "text": "Scanner 3D portable à LiDAR (en cours)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nSystèmes embarqués\n\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et du LiDAR VL53L9CX jusqu’à…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nConception numérique\n\nHDMI\n\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement, conçus en VHDL, simulés puis validés…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nSystèmes embarqués\n\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\n\nJava\n\nSwing\n\nProgrammation orientée objet\n\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\n\nModélisation\n\nPython\n\nExpérimentation\n\nCPGE\n\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu…\n\n\n\n\n\nAucun article correspondant"
   },
   {
     "objectID": "doc.html",
@@ -202,18 +188,6 @@
     "crumbs": [
       "Mon TIPE : Waveglider",
       "Documentation sur le sujet"
-    ]
-  },
-  {
-    "objectID": "travaux/projet2.html",
-    "href": "travaux/projet2.html",
-    "title": "TIPE : modélisation dynamique d’un wave glider",
-    "section": "",
-    "text": "Note\n\n\n\nLe TIPE est un travail de recherche personnel mené en classes préparatoires (MPSI-PSI, lycée Chaptal) et présenté aux concours. Le thème imposé de l’année était « Transition, transformation, conversion ».",
-    "crumbs": [
-      "Accueil",
-      "Mon TIPE : Waveglider",
-      "Présentation du TIPE"
     ]
   },
   {

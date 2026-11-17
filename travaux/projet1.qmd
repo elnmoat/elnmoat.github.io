@@ -1,13 +1,12 @@
 ---
 title: "PC_BOT : robot mobile autonome à télémétrie sans fil"
 date: 2026-05-01
-page-layout: full
 description: "Robot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d'un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie vers une station de base."
 image: "PCBOTcarte.jpg"
 categories: [PCB, KiCad, STM32, C, Systèmes embarqués]
-title-block-banner: "PCBOTcarte2.jpg"
-title-block-banner-color: "white"
 ---
+
+![](PCBOTcarte2.jpg){.project-cover .nolightbox}
 
 ## En bref
 

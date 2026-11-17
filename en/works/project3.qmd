@@ -4,9 +4,9 @@ date: 2026-03-01
 description: "2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end screens."
 categories: [Java, Swing, Object-oriented programming]
 image: "titlepanel.png"
-title-block-banner: "titlepanel.png"
-title-block-banner-color: "white"
 ---
+
+![](titlepanel.png){.project-cover .nolightbox}
 
 ## At a glance
 

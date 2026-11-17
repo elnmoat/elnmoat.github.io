@@ -1,25 +1,14 @@
 ---
 title: "Contact"
+description: "Une question sur un projet ou une offre de stage ? Écrivez-moi, je réponds rapidement."
 ---
 
-
-
-Vous avez une question sur l'un de mes projets ou vous souhaitez discuter d'une collaboration éventuelle ?
-
-**N'hésitez pas à m'envoyer un message !** Je vous répondrai dans les plus brefs délais.
-
-<div style="text-align: center; margin: 40px 0;">
-  <a href="mailto:elnmoat@gmail.com" class="btn btn-success btn-lg">
-    <i class="bi bi-envelope-fill"></i> M'envoyer un e-mail
-  </a>
+```{=html}
+<div class="contact-grid">
+  <a class="contact-item" href="mailto:elnmoat@gmail.com"><i class="bi bi-envelope"></i><div><div class="contact-label">E-mail</div><div class="contact-value">elnmoat@gmail.com</div></div></a>
+  <a class="contact-item" href="mailto:moatsembellh.elnemrawi@ensea.fr"><i class="bi bi-mortarboard"></i><div><div class="contact-label">E-mail ENSEA</div><div class="contact-value">moatsembellh.elnemrawi@ensea.fr</div></div></a>
+  <a class="contact-item" href="https://www.linkedin.com/in/elnmoat/"><i class="bi bi-linkedin"></i><div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/elnmoat</div></div></a>
+  <a class="contact-item" href="https://github.com/elnmoat"><i class="bi bi-github"></i><div><div class="contact-label">GitHub</div><div class="contact-value">github.com/elnmoat</div></div></a>
 </div>
-
-::: {.vcard}
-
-### Mes coordonnées directes
-
-- {{< fa envelope >}} **Email** : [elnmoat@gmail.com](mailto:elnmoat@gmail.com)
-- {{< fa envelope >}} **Email** : [moatsembellh.elnemrawi@ensea.fr](mailto:moatsembellh.elnemrawi@ensea.fr)
-- {{< fa brands linkedin >}} **LinkedIn** : [Profil LinkedIn](https://www.linkedin.com/in/elnmoat/)
-- {{< fa brands github >}} **GitHub** : [Mon GitHub](https://github.com/elnmoat)
-:::
+<a href="CV_moatsembellh.pdf" class="btn btn-dark" target="_blank"><i class="bi bi-file-earmark-pdf"></i> Télécharger mon CV</a>
+```
