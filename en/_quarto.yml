@@ -9,6 +9,7 @@ project:
     - works/*.qmd
   resources:
     - CV_moatsembellh_en.pdf
+    - photo.jpg
     - works/tipe/
 
 website:

@@ -135,16 +135,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "El Nemrawi Moatsembellh",
+    "title": "Moatsembellh El Nemrawi",
     "section": "",
-    "text": "Hi! I’m El Nemrawi, a second-year engineering student at ENSEA (École Nationale Supérieure de l’Électronique et de ses Applications, France). I’m passionate about embedded systems, digital design on FPGA and PCB design. This site gathers my main projects.\nI’m looking for a 3 to 4 month internship from April 2027 in embedded systems, microelectronics or FPGA.\n\n\n\nPython / C / Java Embedded Systems & FPGA VHDL / Quartus / ARM Assembly STM32CubeIDE / KiCad / Matlab\n\n\n  DOWNLOAD MY RESUME    CONTACT ME \n\n\n  LinkedIn    GitHub"
+    "text": "Electronic engineering student · ENSEA\n    \n    I design embedded systems end to end: custom PCBs, C firmware on STM32 and digital logic on FPGA.\n    Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA or microelectronics\n    \n       Resume\n       Contact"
   },
   {
-    "objectID": "index.html#projects",
-    "href": "index.html#projects",
-    "title": "El Nemrawi Moatsembellh",
-    "section": "Projects",
-    "text": "Projects\nA selection of the projects I have worked on during my studies.\n\n\n\n\n\n\n\n\n\n\nHandheld 3D LiDAR scanner (in progress)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nEmbedded systems\n\n\n\nSecond-year team project (6 students): a handheld scanner that maps a room in 2D and 3D, from a custom PCB built around an STM32 and the VL53L9CX LiDAR to the visualisation…\n\n\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nDigital design\n\nHDMI\n\n\n\nComplete digital Etch A Sketch on a DE10-Nano board: rotary encoders, 720×480 HDMI controller, dual-port frame memory and screen clearing, designed in VHDL, simulated and…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nEmbedded systems\n\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and the nRF24L01+ radio link (SPI)…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n\nJava\n\nSwing\n\nObject-oriented programming\n\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives, sprint with stamina, menus and end…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\n\nModelling\n\nPython\n\nExperimentation\n\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model using Kane’s equations solved in Python…\n\n\n\n\n\nNo matching items"
+    "objectID": "index.html#selected-projects",
+    "href": "index.html#selected-projects",
+    "title": "Moatsembellh El Nemrawi",
+    "section": "Selected projects",
+    "text": "Selected projects\n\n\n\n\n\n\n\n\n\n\nHandheld 3D LiDAR scanner (in progress)\n\n\nSecond-year team project (6 students): a handheld scanner that maps a room in 2D and 3D, from a custom PCB built around an STM32 and the…\n\n\n\n\n\n\n\n\n\n\n\n\nEtch A Sketch on FPGA (VHDL)\n\n\nComplete digital Etch A Sketch on a DE10-Nano board: rotary encoders, 720×480 HDMI controller, dual-port frame memory and screen clearing…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT: autonomous mobile robot with wireless telemetry\n\n\nMobile robot designed from scratch in a team of 5: custom 4-layer PCB in KiCad around an STM32, C firmware for the ToF sensor (I2C) and…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer: 2D adventure game in Java\n\n\n2D Java/Swing game built around three engines (rendering, physics, game logic): levels loaded from text files, enemies and traps, lives…\n\n\n\n\n\n\n\n\n\n\n\n\nResearch project: dynamic modelling of a wave glider\n\n\nStudy of a marine drone propelled only by waves: two prototypes tested in a wave tank, video-based measurements, then a dynamic model…\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Moatsembellh El Nemrawi",
+    "section": "Skills",
+    "text": "Skills\n\n  Digital designVHDLFPGA (Intel Cyclone V)Quartus, SurferTestbenches\n  Embedded & electronicsSTM32, bare-metal CI2C, SPISchematic & PCB (KiCad)LTspice\n  ProgrammingPython, CARM Assembly, JavaSQLMachine learning (coursework)\n  ToolsSTM32CubeIDEMatlab, SimulinkGit, GitHubTypst, LaTeX"
   },
   {
     "objectID": "projects.html",

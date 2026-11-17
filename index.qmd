@@ -1,6 +1,5 @@
 ---
-title: "El Nemrawi Moatsembellh"
-subtitle: "Élève ingénieur ENSEA | Systèmes embarqués & FPGA"
+pagetitle: "Moatsembellh El Nemrawi"
 format:
   html:
     toc: false
@@ -11,50 +10,49 @@ listing:
   type: grid
   sort: "date desc"
   categories: false
-  image-height: "250px"
-  grid-columns: 2
-  fields: [image, title, description, categories]
-  
+  image-height: "200px"
+  grid-columns: 3
+  fields: [image, title, description]
+  max-description-length: 140
 ---
 
-::: {.text-center}
-# Bienvenue dans mon univers 
+```{=html}
+<section class="home-hero">
+  <div>
+    <p class="home-kicker">Élève ingénieur en électronique · ENSEA</p>
+    <h1 class="home-name">Moatsembellh El Nemrawi</h1>
+    <p class="home-lead">Je conçois des systèmes embarqués de bout en bout : cartes électroniques sur mesure, firmware C sur STM32 et logique numérique sur FPGA.</p>
+    <div class="home-avail"><span class="dot"></span>Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA ou microélectronique</div>
+    <div class="home-actions">
+      <a href="CV_moatsembellh.pdf" class="btn btn-dark" target="_blank"><i class="bi bi-file-earmark-pdf"></i> Mon CV</a>
+      <a href="contact.html" class="btn btn-outline-dark"><i class="bi bi-envelope"></i> Contact</a>
+      <a href="https://github.com/elnmoat" class="home-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/elnmoat/" class="home-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+  <div class="home-photo"><img src="photo.jpg" alt="Moatsembellh El Nemrawi"></div>
+</section>
 
-Bonjour ! Je suis **El Nemrawi**, étudiant ingénieur en 2ème année à l'ENSEA. Passionné par les systèmes embarqués, la conception numérique sur FPGA et la conception de cartes électroniques, ce site regroupe mes travaux marquants.
+<section class="home-facts">
+  <div><div class="fact-value">ENSEA</div><div class="fact-label">Cycle ingénieur, niveau master, 2025–2028</div></div>
+  <div><div class="fact-value">Avril 2027</div><div class="fact-label">Disponible pour un stage de 3 à 4 mois</div></div>
+  <div><div class="fact-value">TOEIC 830</div><div class="fact-label">Anglais courant, français langue maternelle</div></div>
+  <div><div class="fact-value">Paris</div><div class="fact-label">Basé à Paris, France</div></div>
+</section>
+```
 
-Je recherche un **stage de 3 à 4 mois à partir d'avril 2027** en systèmes embarqués, microélectronique ou FPGA.
-
-### 🛠️ Boîte à Outils & Compétences
-<div style="margin: 20px 0;">
-  <span class="badge rounded-pill bg-primary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Python / C / Java</span>
-  <span class="badge rounded-pill bg-success" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Systèmes Embarqués & FPGA</span>
-  <span class="badge rounded-pill bg-info text-dark" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">VHDL / Quartus / Assembleur ARM</span>
-  <span class="badge rounded-pill bg-secondary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">STM32CubeIDE / KiCad / Matlab</span>
-</div>
-
-<div style="margin: 40px 0;">
-  <a href="CV_moatsembellh.pdf" class="btn btn-dark btn-lg" target="_blank">
-    <i class="bi bi-file-earmark-pdf-fill"></i> TÉLÉCHARGER MON CV
-  </a>
-  <a href="contact.qmd" class="btn btn-success btn-lg mx-2">
-    <i class="bi bi-envelope"></i> ME CONTACTER
-  </a>
-</div>
-<div style="margin-bottom: 50px;">
-  <a href="https://linkedin.com/in/elnmoat" class="btn btn-outline-primary">
-    <i class="bi bi-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://github.com/elnmoat" class="btn btn-outline-dark mx-2">
-    <i class="bi bi-github"></i> GitHub
-  </a>
-</div>
-
-:::
-
----
-
-## Mes Réalisations
-*Consultez les projets que j'ai eu la chance de réaliser tout au long de mon parcours.*
+## Projets {.home-section-title}
 
 ::: {#mes-projets}
 :::
+
+## Compétences {.home-section-title}
+
+```{=html}
+<div class="home-skills">
+  <div><h4>Conception numérique</h4><ul><li>VHDL</li><li>FPGA (Intel Cyclone V)</li><li>Quartus, Surfer</li><li>Testbenches</li></ul></div>
+  <div><h4>Embarqué et électronique</h4><ul><li>STM32, C bare-metal</li><li>I2C, SPI</li><li>Schéma et PCB (KiCad)</li><li>LTspice</li></ul></div>
+  <div><h4>Programmation</h4><ul><li>Python, C</li><li>Assembleur ARM, Java</li><li>SQL</li><li>Machine learning (cours)</li></ul></div>
+  <div><h4>Outils</h4><ul><li>STM32CubeIDE</li><li>Matlab, Simulink</li><li>Git, GitHub</li><li>Typst, LaTeX</li></ul></div>
+</div>
+```

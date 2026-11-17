@@ -135,16 +135,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "El Nemrawi Moatsembellh",
+    "title": "Moatsembellh El Nemrawi",
     "section": "",
-    "text": "Bonjour ! Je suis El Nemrawi, étudiant ingénieur en 2ème année à l’ENSEA. Passionné par les systèmes embarqués, la conception numérique sur FPGA et la conception de cartes électroniques, ce site regroupe mes travaux marquants.\nJe recherche un stage de 3 à 4 mois à partir d’avril 2027 en systèmes embarqués, microélectronique ou FPGA.\n\n\n\nPython / C / Java Systèmes Embarqués & FPGA VHDL / Quartus / Assembleur ARM STM32CubeIDE / KiCad / Matlab\n\n\n  TÉLÉCHARGER MON CV    ME CONTACTER \n\n\n  LinkedIn    GitHub"
+    "text": "Élève ingénieur en électronique · ENSEA\n    \n    Je conçois des systèmes embarqués de bout en bout : cartes électroniques sur mesure, firmware C sur STM32 et logique numérique sur FPGA.\n    Je recherche un stage de 3 à 4 mois à partir d'avril 2027 en systèmes embarqués, FPGA ou microélectronique\n    \n       Mon CV\n       Contact"
   },
   {
-    "objectID": "index.html#mes-réalisations",
-    "href": "index.html#mes-réalisations",
-    "title": "El Nemrawi Moatsembellh",
-    "section": "Mes Réalisations",
-    "text": "Mes Réalisations\nConsultez les projets que j’ai eu la chance de réaliser tout au long de mon parcours.\n\n\n\n\n\n\n\n\n\n\nScanner 3D portable à LiDAR (en cours)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nSystèmes embarqués\n\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et du LiDAR VL53L9CX jusqu’à…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nConception numérique\n\nHDMI\n\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement, conçus en VHDL, simulés puis validés…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nSystèmes embarqués\n\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\n\nJava\n\nSwing\n\nProgrammation orientée objet\n\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\n\nModélisation\n\nPython\n\nExpérimentation\n\nCPGE\n\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu…\n\n\n\n\n\nAucun article correspondant"
+    "objectID": "index.html#projets",
+    "href": "index.html#projets",
+    "title": "Moatsembellh El Nemrawi",
+    "section": "Projets",
+    "text": "Projets\n\n\n\n\n\n\n\n\n\n\nScanner 3D portable à LiDAR (en cours)\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle…\n\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "index.html#compétences",
+    "href": "index.html#compétences",
+    "title": "Moatsembellh El Nemrawi",
+    "section": "Compétences",
+    "text": "Compétences\n\n  Conception numériqueVHDLFPGA (Intel Cyclone V)Quartus, SurferTestbenches\n  Embarqué et électroniqueSTM32, C bare-metalI2C, SPISchéma et PCB (KiCad)LTspice\n  ProgrammationPython, CAssembleur ARM, JavaSQLMachine learning (cours)\n  OutilsSTM32CubeIDEMatlab, SimulinkGit, GitHubTypst, LaTeX"
   },
   {
     "objectID": "projets.html",

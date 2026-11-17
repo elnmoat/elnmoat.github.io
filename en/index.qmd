@@ -1,6 +1,5 @@
 ---
-title: "El Nemrawi Moatsembellh"
-subtitle: "Engineering student at ENSEA | Embedded systems & FPGA"
+pagetitle: "Moatsembellh El Nemrawi"
 format:
   html:
     toc: false
@@ -11,49 +10,49 @@ listing:
   type: grid
   sort: "date desc"
   categories: false
-  image-height: "250px"
-  grid-columns: 2
-  fields: [image, title, description, categories]
+  image-height: "200px"
+  grid-columns: 3
+  fields: [image, title, description]
+  max-description-length: 140
 ---
 
-::: {.text-center}
-# Welcome
+```{=html}
+<section class="home-hero">
+  <div>
+    <p class="home-kicker">Electronic engineering student · ENSEA</p>
+    <h1 class="home-name">Moatsembellh El Nemrawi</h1>
+    <p class="home-lead">I design embedded systems end to end: custom PCBs, C firmware on STM32 and digital logic on FPGA.</p>
+    <div class="home-avail"><span class="dot"></span>Looking for a 3–4 month internship from April 2027 in embedded systems, FPGA or microelectronics</div>
+    <div class="home-actions">
+      <a href="CV_moatsembellh_en.pdf" class="btn btn-dark" target="_blank"><i class="bi bi-file-earmark-pdf"></i> Resume</a>
+      <a href="contact.html" class="btn btn-outline-dark"><i class="bi bi-envelope"></i> Contact</a>
+      <a href="https://github.com/elnmoat" class="home-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/elnmoat/" class="home-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+  <div class="home-photo"><img src="photo.jpg" alt="Moatsembellh El Nemrawi"></div>
+</section>
 
-Hi! I'm **El Nemrawi**, a second-year engineering student at ENSEA (École Nationale Supérieure de l'Électronique et de ses Applications, France). I'm passionate about embedded systems, digital design on FPGA and PCB design. This site gathers my main projects.
+<section class="home-facts">
+  <div><div class="fact-value">ENSEA</div><div class="fact-label">Engineering degree, Master's level, 2025–2028</div></div>
+  <div><div class="fact-value">April 2027</div><div class="fact-label">Available for a 3–4 month internship</div></div>
+  <div><div class="fact-value">TOEIC 830</div><div class="fact-label">Fluent English, native French</div></div>
+  <div><div class="fact-value">Paris, France</div><div class="fact-label">Based in Paris</div></div>
+</section>
+```
 
-I'm looking for a **3 to 4 month internship from April 2027** in embedded systems, microelectronics or FPGA.
-
-### 🛠️ Skills & Tools
-<div style="margin: 20px 0;">
-  <span class="badge rounded-pill bg-primary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Python / C / Java</span>
-  <span class="badge rounded-pill bg-success" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">Embedded Systems & FPGA</span>
-  <span class="badge rounded-pill bg-info text-dark" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">VHDL / Quartus / ARM Assembly</span>
-  <span class="badge rounded-pill bg-secondary" style="font-size: 0.95rem; margin: 4px; padding: 8px 15px;">STM32CubeIDE / KiCad / Matlab</span>
-</div>
-
-<div style="margin: 40px 0;">
-  <a href="CV_moatsembellh_en.pdf" class="btn btn-dark btn-lg" target="_blank">
-    <i class="bi bi-file-earmark-pdf-fill"></i> DOWNLOAD MY RESUME
-  </a>
-  <a href="contact.qmd" class="btn btn-success btn-lg mx-2">
-    <i class="bi bi-envelope"></i> CONTACT ME
-  </a>
-</div>
-<div style="margin-bottom: 50px;">
-  <a href="https://linkedin.com/in/elnmoat" class="btn btn-outline-primary">
-    <i class="bi bi-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://github.com/elnmoat" class="btn btn-outline-dark mx-2">
-    <i class="bi bi-github"></i> GitHub
-  </a>
-</div>
-
-:::
-
----
-
-## Projects
-*A selection of the projects I have worked on during my studies.*
+## Selected projects {.home-section-title}
 
 ::: {#my-projects}
 :::
+
+## Skills {.home-section-title}
+
+```{=html}
+<div class="home-skills">
+  <div><h4>Digital design</h4><ul><li>VHDL</li><li>FPGA (Intel Cyclone V)</li><li>Quartus, Surfer</li><li>Testbenches</li></ul></div>
+  <div><h4>Embedded & electronics</h4><ul><li>STM32, bare-metal C</li><li>I2C, SPI</li><li>Schematic & PCB (KiCad)</li><li>LTspice</li></ul></div>
+  <div><h4>Programming</h4><ul><li>Python, C</li><li>ARM Assembly, Java</li><li>SQL</li><li>Machine learning (coursework)</li></ul></div>
+  <div><h4>Tools</h4><ul><li>STM32CubeIDE</li><li>Matlab, Simulink</li><li>Git, GitHub</li><li>Typst, LaTeX</li></ul></div>
+</div>
+```

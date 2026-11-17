@@ -13,7 +13,7 @@ quarto render
 cp custom.css en/
 cp -R _extensions en/
 cp -R doc.assets en/
-cp CV_moatsembellh_en.pdf en/
+cp CV_moatsembellh_en.pdf photo.jpg en/
 for f in PCBOTcarte.jpg PCBOTcarte2.jpg waveglider.jpg titlepanel.png; do cp "travaux/$f" en/works/; done
 cp -R travaux/fpga travaux/tipe travaux/scan3d en/works/
 
