@@ -1,20 +1,22 @@
 [
   {
-    "listing": "/projets.html",
+    "listing": "/index.html",
     "items": [
-      "/travaux/projet4.html",
-      "/travaux/projet1.html",
-      "/travaux/projet3.html",
-      "/travaux/projet2.html"
+      "/works/project5.html",
+      "/works/project4.html",
+      "/works/project1.html",
+      "/works/project3.html",
+      "/works/project2.html"
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/projects.html",
     "items": [
-      "/travaux/projet4.html",
-      "/travaux/projet1.html",
-      "/travaux/projet3.html",
-      "/travaux/projet2.html"
+      "/works/project5.html",
+      "/works/project4.html",
+      "/works/project1.html",
+      "/works/project3.html",
+      "/works/project2.html"
     ]
   }
 ]

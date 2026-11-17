@@ -1,0 +1,366 @@
+[
+  {
+    "objectID": "travaux/projet5.html",
+    "href": "travaux/projet5.html",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "",
+    "text": "Note\n\n\n\nProjet en cours. Cette page présente le cadrage et les premières étapes ; elle sera complétée au fil de l’avancement."
+  },
+  {
+    "objectID": "travaux/projet5.html#en-bref",
+    "href": "travaux/projet5.html#en-bref",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "En bref",
+    "text": "En bref\n\n\n\n\n\n\n\nCadre\nProjet pluridisciplinaire de 2ᵉ année, ENSEA, 2026–2027\n\n\nÉquipe\n6 étudiants, encadrés par un enseignant\n\n\nCapteurs\nLiDAR multizone ST VL53L9CX, centrale inertielle ST LSM6DSV16X\n\n\nOutils\nSTM32CubeMX, STM32CubeIDE, C (HAL), KiCad, Git/GitHub"
+  },
+  {
+    "objectID": "travaux/projet5.html#objectif",
+    "href": "travaux/projet5.html#objectif",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "Objectif",
+    "text": "Objectif\nConcevoir un scanner 3D/2D portable et autonome, capable de mesurer une pièce et d’afficher sa géométrie en temps réel. Le scénario fictif est celui d’un cabinet d’architectes ou d’une agence immobilière qui veut relever rapidement une pièce, générer un plan 2D et un modèle 3D.\nLe projet couvre toute la chaîne :\n\nÉlectronique : PCB sur mesure autour d’un microcontrôleur STM32 et du LiDAR VL53L9CX, de la saisie du schéma au test de la carte.\nLogiciel embarqué : firmware C pour configurer les capteurs, acquérir les profondeurs en temps réel et gérer la communication.\nIntelligence artificielle : reconnaissance des éléments de la pièce (murs, portes, fenêtres, obstacles), embarquée ou déportée sur l’ordinateur.\nApplication : réception des données (USB, Bluetooth ou Wi-Fi) et affichage du plan 2D et du nuage de points 3D.\nMécanique : boîtier ergonomique conçu en CAO et imprimé en 3D."
+  },
+  {
+    "objectID": "travaux/projet5.html#contraintes",
+    "href": "travaux/projet5.html#contraintes",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "Contraintes",
+    "text": "Contraintes\n\nComposants exclusivement STMicroelectronics.\nBudget d’environ 150 € pour l’ensemble du projet.\nFonctionnement sur batterie, avec une conception basse consommation.\nAppareil tenu à la main : léger et simple à utiliser."
+  },
+  {
+    "objectID": "travaux/projet5.html#démarche",
+    "href": "travaux/projet5.html#démarche",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "Démarche",
+    "text": "Démarche\nL’équipe travaille en sprints agiles et tient un cahier de laboratoire (décisions, justifications, analyse des échecs). Pour limiter les risques, la priorité est donnée à un produit minimum : cartographie 2D et transmission brute des données LiDAR d’abord, puis l’IA et le rendu 3D. Chaque capteur est validé sur une carte de développement Nucleo avant la fabrication du PCB."
+  },
+  {
+    "objectID": "travaux/projet5.html#avancement",
+    "href": "travaux/projet5.html#avancement",
+    "title": "Scanner 3D portable à LiDAR (en cours)",
+    "section": "Avancement",
+    "text": "Avancement\nValidation de la centrale inertielle. J’ai mis en service la carte d’évaluation STEVAL-MKI227KA (LSM6DSV16X) sur une NUCLEO-F410RB en I2C :\n\nscan du bus I2C et identification du capteur par son registre WHO_AM_I ;\nconfiguration de l’accéléromètre et du gyroscope à 30 Hz par lecture et écriture directe des registres avec la HAL ;\naffichage des accélérations, vitesses angulaires et température sur le port série, avec un guide de câblage et de dépannage pour l’équipe.\n\nProchaines étapes : intégration du LiDAR VL53L9CX, puis conception du PCB.\n📁 Dépôt GitHub du projet\n\n  Retour aux projets"
+  },
+  {
+    "objectID": "travaux/projet3.html",
+    "href": "travaux/projet3.html",
+    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
+    "section": "",
+    "text": "Cadre\nProjet de programmation orientée objet, ENSEA, 2025–2026\n\n\nLangage\nJava (Swing, AWT)\n\n\nTaille\nEnviron 1 000 lignes réparties en une vingtaine de classes"
+  },
+  {
+    "objectID": "travaux/projet3.html#en-bref",
+    "href": "travaux/projet3.html#en-bref",
+    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
+    "section": "",
+    "text": "Cadre\nProjet de programmation orientée objet, ENSEA, 2025–2026\n\n\nLangage\nJava (Swing, AWT)\n\n\nTaille\nEnviron 1 000 lignes réparties en une vingtaine de classes"
+  },
+  {
+    "objectID": "travaux/projet3.html#le-jeu",
+    "href": "travaux/projet3.html#le-jeu",
+    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
+    "section": "Le jeu",
+    "text": "Le jeu\nLe joueur dirige un héros dans un donjon vu de dessus. Il doit atteindre le portail de sortie en évitant les ennemis et les pièges, dont certains se déplacent.\n\nNiveaux en fichiers texte : chaque caractère d’un fichier level.txt correspond à une tuile (mur, rocher, piège, portail…). On crée un nouveau niveau sans toucher au code.\nVies : une barre de cœurs animée perd une vie à chaque contact avec un ennemi ou un piège.\nSprint : la touche Maj fait courir le héros et vide une barre d’endurance, qui se recharge dès qu’il arrête de courir.\nÉcrans : écran titre, écran de défaite et écran de victoire avec bouton « Rejouer », gérés par un CardLayout.\nAnimations : le héros et les ennemis sont animés à partir de planches de sprites."
+  },
+  {
+    "objectID": "travaux/projet3.html#architecture",
+    "href": "travaux/projet3.html#architecture",
+    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
+    "section": "Architecture",
+    "text": "Architecture\nLe jeu repose sur trois moteurs indépendants, chacun cadencé par son propre Timer Swing (toutes les 50 ms) :\n\nRenderEngine dessine tous les objets affichables.\nPhysicEngine gère les déplacements et les collisions : un SolidSprite bloque le passage, un Sprite simple se traverse.\nGameEngine lit le clavier et gère l’état de la partie (victoire, défaite).\n\n\n\n\n\n\nclassDiagram\n    class Engine {\n        &lt;&lt;interface&gt;&gt;\n    }\n    class Displayable {\n        &lt;&lt;interface&gt;&gt;\n    }\n\n    class GameEngine\n    class PhysicEngine\n    class RenderEngine\n\n    Engine &lt;|.. GameEngine\n    Engine &lt;|.. PhysicEngine\n    Engine &lt;|.. RenderEngine\n\n    class Sprite\n    class SolidSprite\n    class PortalSprite\n    class TrapSprite\n    class DynamicSprite\n    class EnemySprite\n    class MovingTrapSprite\n\n    Displayable &lt;|.. Sprite\n\n    Sprite &lt;|-- SolidSprite\n    Sprite &lt;|-- PortalSprite\n    Sprite &lt;|-- TrapSprite\n\n    SolidSprite &lt;|-- DynamicSprite\n    DynamicSprite &lt;|-- EnemySprite\n    EnemySprite &lt;|-- MovingTrapSprite\n\n    class Playground\n    class Main"
+  },
+  {
+    "objectID": "travaux/projet3.html#notions-de-poo-mises-en-œuvre",
+    "href": "travaux/projet3.html#notions-de-poo-mises-en-œuvre",
+    "title": "Dungeon Explorer : jeu d’aventure 2D en Java",
+    "section": "Notions de POO mises en œuvre",
+    "text": "Notions de POO mises en œuvre\n\nInterfaces : Displayable impose une méthode d’affichage et Engine une méthode de mise à jour, ce qui permet aux moteurs de traiter des listes d’objets sans connaître leur type exact.\nHéritage : Sprite porte une position et une image ; SolidSprite ajoute une hitbox ; DynamicSprite ajoute le mouvement ; EnemySprite et MovingTrapSprite spécialisent ce mouvement.\nPolymorphisme : chaque type de sprite redéfinit son affichage, par exemple pour animer une planche de sprites.\nSéparation des responsabilités : affichage, physique et logique de jeu évoluent indépendamment.\n\n\n  Retour aux projets"
+  },
+  {
+    "objectID": "travaux/projet1.html",
+    "href": "travaux/projet1.html",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "",
+    "text": "Cadre\nProjet de 1ʳᵉ année, ENSEA, 2025–2026\n\n\nÉquipe\n5 étudiants\n\n\nMon rôle\nSchéma et routage du PCB, firmware et tests du capteur ToF et du module radio\n\n\nOutils\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+  },
+  {
+    "objectID": "travaux/projet1.html#en-bref",
+    "href": "travaux/projet1.html#en-bref",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "",
+    "text": "Cadre\nProjet de 1ʳᵉ année, ENSEA, 2025–2026\n\n\nÉquipe\n5 étudiants\n\n\nMon rôle\nSchéma et routage du PCB, firmware et tests du capteur ToF et du module radio\n\n\nOutils\nKiCad, STM32CubeIDE (HAL), C, PuTTY, Onshape, Git/GitHub"
+  },
+  {
+    "objectID": "travaux/projet1.html#objectif",
+    "href": "travaux/projet1.html#objectif",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "Objectif",
+    "text": "Objectif\nPC_BOT est un petit robot à roues destiné à cartographier une pièce. Plusieurs robots se placent sur le périmètre, se déplacent de façon autonome en évitant les obstacles et échangent leurs positions par radio. Chaque robot transmet en continu à une station de base ses distances aux obstacles, son orientation, sa vitesse et son accélération, pour reconstruire une représentation 2D de la pièce."
+  },
+  {
+    "objectID": "travaux/projet1.html#cahier-des-charges",
+    "href": "travaux/projet1.html#cahier-des-charges",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "Cahier des charges",
+    "text": "Cahier des charges\n\n\n\n\n\n\n\nFonction\nSolution retenue\n\n\n\n\nMobilité autonome\n2 motoréducteurs CC pilotés en PWM par un driver DRV8411A\n\n\nPerception des obstacles\nCapteur temps de vol VL53L0X (I2C)\n\n\nOrientation et mouvement\nCentrale inertielle LSM6DSOX (I2C)\n\n\nCommunication\nModule radio nRF24L01+ à 2,4 GHz (SPI)\n\n\nÉnergie\nBatterie Li-ion 18650 (3400 mAh), chargeur BQ25896 via USB-C, régulateur 3,3 V\n\n\nUnité centrale\nMicrocontrôleur STM32G431KBT6"
+  },
+  {
+    "objectID": "travaux/projet1.html#architecture-matérielle",
+    "href": "travaux/projet1.html#architecture-matérielle",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "Architecture matérielle",
+    "text": "Architecture matérielle\n\n\n\n\n\ngraph LR\n    MCU[STM32G431KBT6]\n\n    subgraph BUS_I2C [Bus I2C]\n        TOF[Capteur ToF VL53L0X]\n        IMU[IMU LSM6DSOX]\n        BQ[Chargeur BQ25896]\n    end\n\n    subgraph BUS_SPI [Bus SPI]\n        NRF[Module nRF24L01+]\n    end\n\n    subgraph POWER [Alimentation]\n        BAT[Batterie 18650]\n        USB[Prise USB-C]\n    end\n\n    subgraph MOTORS [Motorisation]\n        DRV[Driver DRV8411A]\n        M1[Moteurs CC]\n    end\n\n    MCU -- \"SDA / SCL\" --- BUS_I2C\n    MCU -- \"MOSI / MISO / SCK\" --- BUS_SPI\n    MCU -- \"PWM\" --- DRV\n    DRV --- M1\n\n    USB -- \"Charge\" --- BQ\n    BAT -- \"Énergie\" --- BQ\n    BQ -- \"VCC\" --- MCU\n\n    NRF -. \"Radio 2,4 GHz\" .-&gt; Station[Station de base]\n\n\n\n\n\n\nLes capteurs (ToF, IMU, chargeur) partagent un bus I2C avec des pull-up de 4,7 kΩ. Le module radio est sur un bus SPI, plus rapide et full-duplex, pour envoyer les données en continu. Le STM32 se programme et se débogue par un connecteur ST-LINK (SWD)."
+  },
+  {
+    "objectID": "travaux/projet1.html#ce-que-jai-fait",
+    "href": "travaux/projet1.html#ce-que-jai-fait",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "Ce que j’ai fait",
+    "text": "Ce que j’ai fait\nConception du PCB (KiCad). Schéma complet puis routage d’une carte 4 couches en composants CMS : microcontrôleur, chaîne de charge Li-ion (BQ25896 avec son inductance de 1 µH, connecteur USB-C), régulation 3,3 V, driver moteur, connecteurs des capteurs et du module radio, LED d’état et boutons. Chaque choix de composant a été vérifié dans sa datasheet.\nFirmware C (STM32CubeIDE). Avant d’avoir la carte finale, chaque capteur a été validé sur une carte de développement STM32 :\n\nCapteur ToF : lecture des distances en I2C. Le capteur détecte les obstacles d’environ 3 cm à un peu moins d’un mètre, avec une portée qui varie selon la lumière ambiante.\nLiaison radio : communication entre deux cartes STM32 équipées chacune d’un nRF24L01+, en émission et en réception, avec affichage des trames reçues dans PuTTY.\n\nAssemblage et mise en service. Soudure des composants CMS, puis tests capteur par capteur sur la carte finale."
+  },
+  {
+    "objectID": "travaux/projet1.html#ce-que-jen-retiens",
+    "href": "travaux/projet1.html#ce-que-jen-retiens",
+    "title": "PC_BOT : robot mobile autonome à télémétrie sans fil",
+    "section": "Ce que j’en retiens",
+    "text": "Ce que j’en retiens\nLa conception du PCB a été la partie la plus longue et la plus formatrice : partir d’un cahier des charges réel pour aboutir à une carte fabriquée. Le projet m’a aussi appris qu’une erreur de routage ou de soudure peut vite provoquer un court-circuit et endommager la carte et ses capteurs, d’où l’importance de tester chaque bloc séparément.\n📁 Dépôt GitHub du projet (schémas KiCad, BOM, firmware de test)\n\n  Retour aux projets"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Vous avez une question sur l’un de mes projets ou vous souhaitez discuter d’une collaboration éventuelle ?\nN’hésitez pas à m’envoyer un message ! Je vous répondrai dans les plus brefs délais.\n\n  M’envoyer un e-mail \n\n\nMes coordonnées directes\n\n Email : elnmoat@gmail.com\n Email : moatsembellh.elnemrawi@ensea.fr\n LinkedIn : Profil LinkedIn\n GitHub : Mon GitHub"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "El Nemrawi Moatsembellh",
+    "section": "",
+    "text": "Bonjour ! Je suis El Nemrawi, étudiant ingénieur en 2ème année à l’ENSEA. Passionné par les systèmes embarqués, la conception numérique sur FPGA et la conception de cartes électroniques, ce site regroupe mes travaux marquants.\nJe recherche un stage de 3 à 4 mois à partir d’avril 2027 en systèmes embarqués, microélectronique ou FPGA.\n\n\n\nPython / C / Java Systèmes Embarqués & FPGA VHDL / Quartus / Assembleur ARM STM32CubeIDE / KiCad / Matlab\n\n\n  TÉLÉCHARGER MON CV    ME CONTACTER \n\n\n  LinkedIn    GitHub"
+  },
+  {
+    "objectID": "index.html#mes-réalisations",
+    "href": "index.html#mes-réalisations",
+    "title": "El Nemrawi Moatsembellh",
+    "section": "Mes Réalisations",
+    "text": "Mes Réalisations\nConsultez les projets que j’ai eu la chance de réaliser tout au long de mon parcours.\n\n\n\n\n\n\n\n\n\n\nScanner 3D portable à LiDAR (en cours)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nSystèmes embarqués\n\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et du LiDAR VL53L9CX jusqu’à…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nConception numérique\n\nHDMI\n\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement, conçus en VHDL, simulés puis validés…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nSystèmes embarqués\n\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\n\nJava\n\nSwing\n\nProgrammation orientée objet\n\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\n\nModélisation\n\nPython\n\nExpérimentation\n\nCPGE\n\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu…\n\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "projets.html",
+    "href": "projets.html",
+    "title": "Mes Réalisations",
+    "section": "",
+    "text": "Cliquez sur un projet pour voir le détail, les schémas et les résultats.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScanner 3D portable à LiDAR (en cours)\n\n\n\nSTM32\n\nC\n\nLiDAR\n\nPCB\n\nSystèmes embarqués\n\n\n\nProjet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d’un STM32 et du LiDAR VL53L9CX jusqu’à…\n\n\n\n\n\n\n\n\n\n\n\n\nÉcran magique sur FPGA (VHDL)\n\n\n\nFPGA\n\nVHDL\n\nConception numérique\n\nHDMI\n\n\n\nTélécran numérique complet sur carte DE10-Nano : encodeurs rotatifs, contrôleur HDMI 720×480, mémoire d’image dual-port et effacement, conçus en VHDL, simulés puis validés…\n\n\n\n\n\n\n\n\n\n\n\n\nPC_BOT : robot mobile autonome à télémétrie sans fil\n\n\n\nPCB\n\nKiCad\n\nSTM32\n\nC\n\nSystèmes embarqués\n\n\n\nRobot mobile conçu de A à Z en équipe de 5 : PCB 4 couches sous KiCad autour d’un STM32, firmware C pour le capteur ToF (I2C) et la liaison radio nRF24L01+ (SPI), télémétrie…\n\n\n\n\n\n\n\n\n\n\n\n\nDungeon Explorer : jeu d’aventure 2D en Java\n\n\n\nJava\n\nSwing\n\nProgrammation orientée objet\n\n\n\nJeu 2D en Java/Swing conçu autour de trois moteurs (rendu, physique, logique) : niveaux chargés depuis des fichiers texte, ennemis et pièges, vies, sprint avec endurance…\n\n\n\n\n\n\n\n\n\n\n\n\nTIPE : modélisation dynamique d’un wave glider\n\n\n\nModélisation\n\nPython\n\nExpérimentation\n\nCPGE\n\n\n\nÉtude d’un drone marin propulsé uniquement par la houle : deux prototypes testés en bassin, mesures par analyse vidéo, puis modèle dynamique par les équations de Kane résolu…\n\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "doc.html",
+    "href": "doc.html",
+    "title": "Documentation sur le wave glider",
+    "section": "",
+    "text": "Vidéo explicative sur YouTube",
+    "crumbs": [
+      "Mon TIPE : Waveglider",
+      "Documentation sur le sujet"
+    ]
+  },
+  {
+    "objectID": "doc.html#présentation",
+    "href": "doc.html#présentation",
+    "title": "Documentation sur le wave glider",
+    "section": "Présentation",
+    "text": "Présentation\nLiquid Robotics est une entreprise américaine spécialisée dans la robotique marine autonome. Elle conçoit et fabrique le Wave Glider, un drone de surface sans pilote (USV, Unmanned Surface Vehicle) alimenté par l’énergie solaire et par l’énergie des vagues, qu’il utilise pour se propulser. L’engin peut ainsi rester plusieurs mois d’affilée en mer pour collecter et transmettre des données océaniques.\nSes applications relèvent surtout de la défense, de la surveillance maritime, de l’industrie pétrolière et gazière et de la recherche scientifique, par exemple :\n\nla surveillance d’infrastructures pétrolières et gazières, de l’atmosphère, de l’activité sismique et de l’environnement ;\nla défense (lutte anti-sous-marine, renseignement, surveillance et reconnaissance) ;\nla surveillance maritime (détection de navires pour la sécurité des côtes et des frontières) ;\nla recherche scientifique (données météorologiques, climatiques et sismiques en haute mer, mesure de l’acidification des océans, suivi des écosystèmes et des populations de poissons).\n\nIl embarque des batteries et des capteurs atmosphériques et océanographiques utiles aux sciences du climat, des capteurs sismiques pour détecter les tremblements de terre et les tsunamis, ainsi que des caméras et des hydrophones pour la sécurité, la surveillance, la recherche ou la protection du milieu marin.\nDepuis 2007, des Wave Gliders ont été déployés de l’Arctique à l’océan Austral : pour suivre les grands requins blancs avec la chercheuse Barbara Block (Hopkins Marine Station), pour patrouiller dans des aires marines protégées contre la pêche illégale pour le compte du Foreign & Commonwealth Office britannique, ou encore pour évaluer la santé de la Grande Barrière de corail. Ils ont aussi collecté et transmis des données pendant des tempêtes extrêmes, et ont permis de détecter et de suivre un sous-marin diesel lors de l’exercice Unmanned Warrior en octobre 2016.",
+    "crumbs": [
+      "Mon TIPE : Waveglider",
+      "Documentation sur le sujet"
+    ]
+  },
+  {
+    "objectID": "doc.html#conception",
+    "href": "doc.html#conception",
+    "title": "Documentation sur le wave glider",
+    "section": "Conception",
+    "text": "Conception\nLe Wave Glider se compose de deux parties :\n\nle flotteur, à peu près de la taille et de la forme d’une grande planche de surf, qui se déplace à la surface de l’océan ;\nle glider (support d’ailes), suspendu sous le flotteur par un câble de 4 à 8 mètres, équipé d’un gouvernail pour se diriger et d’un propulseur qui fournit une poussée supplémentaire dans les conditions difficiles (turbulences, absence de courant ou courant fort).\n\n \nLes ailes peuvent pivoter sur une plage d’environ 60 degrés, ce qui leur donne toujours une inclinaison favorable à la poussée du flotteur vers l’avant.\nLe Wave Glider exploite la différence de mouvement entre la surface de l’océan et l’eau plus calme en profondeur pour avancer. Plus précisément, quand la houle soulève puis abaisse le flotteur, le glider monte et descend avec lui : la portance et la traînée qui s’exercent alors sur les ailes produisent une force qui tire toujours le flotteur vers l’avant.\nAucun carburant n’est nécessaire, ce qui lui permet de rester en mer pendant de longues périodes.",
+    "crumbs": [
+      "Mon TIPE : Waveglider",
+      "Documentation sur le sujet"
+    ]
+  },
+  {
+    "objectID": "doc.html#évolutions",
+    "href": "doc.html#évolutions",
+    "title": "Documentation sur le wave glider",
+    "section": "Évolutions",
+    "text": "Évolutions\nLe 7 septembre 2017, Liquid Robotics a annoncé un Wave Glider de nouvelle génération, adapté aux mers très agitées (état de la mer 6 et plus) et aux eaux froides des hautes latitudes. Il embarque davantage de capteurs et dispose d’une plus grande capacité d’énergie et de stockage, nécessaire aux longues missions de surveillance maritime, de suivi environnemental et d’observation.",
+    "crumbs": [
+      "Mon TIPE : Waveglider",
+      "Documentation sur le sujet"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html",
+    "href": "travaux/projet2.html",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "",
+    "text": "Note\n\n\n\nLe TIPE est un travail de recherche personnel mené en classes préparatoires (MPSI-PSI, lycée Chaptal) et présenté aux concours. Le thème imposé de l’année était « Transition, transformation, conversion ».",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#en-bref",
+    "href": "travaux/projet2.html#en-bref",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "En bref",
+    "text": "En bref\n\n\n\n\n\n\n\nCadre\nTIPE, classes préparatoires, 2024–2025\n\n\nDémarche\nExpérience (2 prototypes) puis modélisation numérique\n\n\nOutils\nPython (NumPy, Matplotlib), Tracker (analyse vidéo), équations de Kane, Runge-Kutta d’ordre 4",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#contexte",
+    "href": "travaux/projet2.html#contexte",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Contexte",
+    "text": "Contexte\nLe wave glider est un drone de surface qui avance sans carburant. Il se compose d’un flotteur en surface relié par un câble à un glider immergé équipé de pales inclinables. Quand la houle soulève et abaisse le flotteur, les pales du glider transforment ce mouvement vertical en une poussée horizontale. Ce principe lui permet de rester des mois en mer pour des missions océanographiques, environnementales ou de surveillance.\nProblématique : comment assurer un mouvement hydrodynamique optimal du flotteur sans apport d’énergie extérieur, avec de nombreux paramètres contraignants (masse des composants, dimensions du flotteur, longueur du câble) ?",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#objectifs",
+    "href": "travaux/projet2.html#objectifs",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nMesurer la vitesse maximale du prototype selon les conditions de houle.\nTrouver la longueur de câble qui maximise la vitesse.\nEstimer numériquement le rapport de masse optimal entre glider et flotteur et le meilleur angle d’attaque des pales.",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#expérimentation",
+    "href": "travaux/projet2.html#expérimentation",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Expérimentation",
+    "text": "Expérimentation\nJ’ai construit deux prototypes. Le premier, testé dans une baignoire avec un générateur de houle à bielle-manivelle, a permis de valider le principe. Le second (glider de 43 g, flotteur de 153,5 g) a été testé dans un bassin à vagues avec un générateur motorisé et de la mousse pour atténuer la houle réfléchie.\nLes mouvements ont été filmés puis analysés image par image avec Tracker : pour chaque série, j’ai ajusté la houle mesurée sur le flotteur par une sinusoïde et calculé la vitesse moyenne du prototype. J’ai ensuite comparé trois longueurs de câble (3,5 cm, 4,7 cm et 5,2 cm).",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#modélisation",
+    "href": "travaux/projet2.html#modélisation",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Modélisation",
+    "text": "Modélisation\n\nForces : portance et traînée sur les pales, poids et poussée d’Archimède, traînée du flotteur.\nÉquations de Kane : cette méthode traite chaque corps séparément sans faire apparaître les forces de liaison, ce qui simplifie le calcul pour un système à deux corps reliés par un câble. Elle donne deux équations différentielles couplées, sur l’angle du câble et sur la vitesse horizontale du flotteur.\nRésolution numérique : schéma de Runge-Kutta d’ordre 4 codé en Python, qui donne l’évolution de la vitesse du flotteur au cours du temps (vitesse moyenne simulée d’environ 0,08 m/s).",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#résultats",
+    "href": "travaux/projet2.html#résultats",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Résultats",
+    "text": "Résultats\n\nVitesse maximale atteinte pour une hauteur de vague d’environ 2 cm.\nLongueur de câble optimale d’environ 5,2 cm pour le prototype n°2.\nRapport de masse optimal autour de 1,5 et angle d’attaque des pales optimal entre 20° et 30°.\n\nLimites et pistes. Le modèle suppose que le flotteur suit parfaitement la houle, que l’angle du câble reste constant et que la trajectoire est plane. Les pistes d’amélioration sont un capteur embarqué pour mesurer directement le mouvement et un câble de longueur réglable.",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet2.html#diaporama-de-présentation",
+    "href": "travaux/projet2.html#diaporama-de-présentation",
+    "title": "TIPE : modélisation dynamique d’un wave glider",
+    "section": "Diaporama de présentation",
+    "text": "Diaporama de présentation\nFaire défiler à l’aide des flèches. Plus de détails dans la documentation.\n\n  \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n  \n\n  \n    \n    Précédent\n  \n  \n    \n    Suivant",
+    "crumbs": [
+      "Accueil",
+      "Mon TIPE : Waveglider",
+      "Présentation du TIPE"
+    ]
+  },
+  {
+    "objectID": "travaux/projet4.html",
+    "href": "travaux/projet4.html",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "",
+    "text": "Cadre\nProjet de TP FPGA, ENSEA, 2026–2027\n\n\nÉquipe\nBinôme\n\n\nMatériel\nCarte DE10-Nano (FPGA Intel Cyclone V SoC 5CSEBA6U23I7), carte mezzanine avec 2 encodeurs rotatifs et 10 LED\n\n\nOutils\nVHDL, Quartus Prime, NVC et Surfer (simulation), VLC avec un adaptateur HDMI vers USB\n\n\nRésultat\nÉcran magique complet : dessin en 720×480 par HDMI, trait mémorisé, effacement par bouton"
+  },
+  {
+    "objectID": "travaux/projet4.html#en-bref",
+    "href": "travaux/projet4.html#en-bref",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "",
+    "text": "Cadre\nProjet de TP FPGA, ENSEA, 2026–2027\n\n\nÉquipe\nBinôme\n\n\nMatériel\nCarte DE10-Nano (FPGA Intel Cyclone V SoC 5CSEBA6U23I7), carte mezzanine avec 2 encodeurs rotatifs et 10 LED\n\n\nOutils\nVHDL, Quartus Prime, NVC et Surfer (simulation), VLC avec un adaptateur HDMI vers USB\n\n\nRésultat\nÉcran magique complet : dessin en 720×480 par HDMI, trait mémorisé, effacement par bouton"
+  },
+  {
+    "objectID": "travaux/projet4.html#objectif",
+    "href": "travaux/projet4.html#objectif",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "Objectif",
+    "text": "Objectif\nRecréer en numérique l’écran magique (le « télécran ») : deux boutons rotatifs déplacent un stylet qui dessine sur un écran. Ici, les boutons sont deux encodeurs rotatifs et le dessin s’affiche par la sortie HDMI de la carte.\nLe projet a avancé brique par brique, en suivant à chaque fois la même démarche : schéma, VHDL, simulation, puis test sur la carte."
+  },
+  {
+    "objectID": "travaux/projet4.html#architecture",
+    "href": "travaux/projet4.html#architecture",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\nflowchart LR\n    ENC_G[Encodeur gauche] --&gt; DEC_X[Décodeur X]\n    ENC_D[Encodeur droit] --&gt; DEC_Y[Décodeur Y]\n    DEC_X -- \"x stylet\" --&gt; A[Port A&lt;br/&gt;écriture]\n    DEC_Y -- \"y stylet\" --&gt; A\n    BTN[Bouton gauche] --&gt; CLR[Effacement]\n    CLR --&gt; A\n    A --&gt; RAM[(Mémoire dual-port&lt;br/&gt;720 × 480)]\n    CTRL[Contrôleur HDMI] -- \"adresse pixel\" --&gt; B[Port B&lt;br/&gt;lecture]\n    B --&gt; RAM\n    RAM -- \"couleur\" --&gt; ADV[Puce HDMI ADV7513]\n    CTRL -- \"HS / VS / DE\" --&gt; ADV\n    ADV --&gt; ECRAN([Écran])"
+  },
+  {
+    "objectID": "travaux/projet4.html#gestion-des-encodeurs",
+    "href": "travaux/projet4.html#gestion-des-encodeurs",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "1. Gestion des encodeurs",
+    "text": "1. Gestion des encodeurs\nUn encodeur rotatif fournit deux signaux A et B décalés d’un quart de période : l’ordre dans lequel ils changent donne le sens de rotation. Le décodeur détecte les fronts de A et B et incrémente ou décrémente un compteur de taille configurable.\n\nSynchronisation : A et B ne sont pas synchronisés sur l’horloge du FPGA. Ils passent donc par deux bascules avant toute détection de front, pour éviter la métastabilité.\nAnti-rebond : sur la carte, un seul cran faisait parfois bouger le compteur de plusieurs unités. Les contacts mécaniques rebondissent pendant quelques millisecondes, et à 50 MHz chaque rebond est vu comme un vrai front. Un paramètre G_TICK_DIV sous-échantillonne A et B toutes les 1 ms, ce qui supprime les rebonds sans rater de cran.\nValidation : le compteur est d’abord relié aux 10 LED pour lire sa valeur en binaire sur la carte.\n\n\n\n\nStructure de détection de front et d’incrémentation du compteur\n\n\n\n\n\nSimulation de l’encodeur en rotation horaire puis anti-horaire (Surfer)"
+  },
+  {
+    "objectID": "travaux/projet4.html#contrôleur-hdmi",
+    "href": "travaux/projet4.html#contrôleur-hdmi",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "2. Contrôleur HDMI",
+    "text": "2. Contrôleur HDMI\nLe contrôleur ne produit aucune couleur : il balaie l’écran pixel par pixel et indique à chaque coup d’horloge où il en est. Il repose sur deux compteurs, un horizontal (858 coups par ligne) et un vertical (525 lignes par image). La zone parcourue est plus grande que l’image 720×480 : les zones invisibles (blanking) font partie de la norme et permettent à l’écran de reconnaître le mode 480p.\nUne image fait 858 × 525 = 450 450 coups, soit 16,7 ms à 27 MHz : 60 images par seconde.\n\n\n\nSynchronisation horizontale : impulsion o_hdmi_hs et zone visible r_h_active sur deux lignes\n\n\n\n\n\nZoom sur le début de la zone visible : la coordonnée x démarre à 0 avec un cycle de retard compensé\n\n\nLa mémoire d’image est rangée ligne par ligne : l’adresse du pixel (x, y) vaut x + y × 720, de 0 à 345 599.\n\n\n\nGénération de o_pixel_en et de o_pixel_address sur une image complète\n\n\nPour tester le contrôleur sur la carte, ses compteurs sont reliés directement aux couleurs : le rouge suit x, le vert suit y. Sur 8 bits, la valeur repart à 0 tous les 256 pixels, d’où les cases.\n\n\n\nDégradé affiché dans VLC par la sortie HDMI de la carte"
+  },
+  {
+    "objectID": "travaux/projet4.html#déplacement-dun-pixel",
+    "href": "travaux/projet4.html#déplacement-dun-pixel",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "3. Déplacement d’un pixel",
+    "text": "3. Déplacement d’un pixel\nUn seul pixel blanc est affiché à la position des encodeurs. Il a fallu ajouter un registre pour que la couleur arrive au même cycle que le signal Data Enable, et passer les encodeurs sur l’horloge pixel à 27 MHz pour que tout tourne sur une seule horloge."
+  },
+  {
+    "objectID": "travaux/projet4.html#mémorisation",
+    "href": "travaux/projet4.html#mémorisation",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "4. Mémorisation",
+    "text": "4. Mémorisation\nPour que le stylet laisse une trace, l’image est stockée dans une mémoire dual-port avec une case par pixel :\n\nle port A écrit du blanc à la position du curseur ;\nle port B relit en parallèle la case du pixel en cours de balayage et donne directement la couleur envoyée à l’écran.\n\nEn 24 bits par pixel (environ 8,3 Mbit), l’image ne tiendrait pas dans les blocs mémoire du FPGA (environ 5,5 Mbit) : chaque case est donc codée sur 8 bits. Le cycle de lecture de la mémoire remplace le registre de l’étape précédente et garde l’image alignée.\n\n\n\nRessources logiques utilisées dans Quartus : 219 ALUT pour la logique"
+  },
+  {
+    "objectID": "travaux/projet4.html#effacement",
+    "href": "travaux/projet4.html#effacement",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "5. Effacement",
+    "text": "5. Effacement\nUn appui sur le bouton de l’encodeur gauche efface l’écran. Le port B étant réservé à l’affichage, l’effacement passe par le port A, qui a alors deux maîtres : les encodeurs en temps normal, et un compteur qui parcourt toutes les adresses pendant l’effacement. Un signal s_clearing choisit entre les deux en basculant ensemble l’adresse, la donnée et l’écriture.\nL’effacement dure 345 600 / 27 MHz ≈ 12,8 ms, moins qu’une image : il paraît instantané. Le stylet reste à sa place et le dessin peut reprendre tout de suite."
+  },
+  {
+    "objectID": "travaux/projet4.html#ce-que-jen-retiens",
+    "href": "travaux/projet4.html#ce-que-jen-retiens",
+    "title": "Écran magique sur FPGA (VHDL)",
+    "section": "Ce que j’en retiens",
+    "text": "Ce que j’en retiens\n\nUn signal venant de l’extérieur doit passer par des bascules avant d’être utilisé.\nUn signal affecté dans un process change au front suivant, ce qui explique les décalages d’un cycle qu’il faut compenser.\nUne simulation correcte ne garantit pas le fonctionnement réel : les rebonds des encodeurs ne sont apparus que sur la carte.\n\n\n  Retour aux projets"
+  }
+]

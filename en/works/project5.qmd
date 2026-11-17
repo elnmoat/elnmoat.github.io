@@ -1,0 +1,61 @@
+---
+title: "Handheld 3D LiDAR scanner (in progress)"
+date: 2026-11-15
+description: "Second-year team project (6 students): a handheld scanner that maps a room in 2D and 3D, from a custom PCB built around an STM32 and the VL53L9CX LiDAR to the visualisation app."
+image: "scan3d/scan3d.svg"
+categories: [STM32, C, LiDAR, PCB, Embedded systems]
+---
+
+::: {.callout-note}
+Work in progress. This page covers the scope and the first steps; it will be updated as the project moves forward.
+:::
+
+## At a glance
+
+| | |
+|:--|:--|
+| **Context** | Second-year multidisciplinary project, ENSEA, 2026–2027 |
+| **Team** | 6 students, supervised by a faculty advisor |
+| **Sensors** | ST **VL53L9CX** multizone LiDAR, ST **LSM6DSV16X** IMU |
+| **Tools** | STM32CubeMX, STM32CubeIDE, C (HAL), KiCad, Git/GitHub |
+
+## Goal
+
+Design a **portable, self-contained 3D/2D scanner** that measures a room and displays its geometry in real time. The fictional use case is an architecture firm or real estate agency that wants to survey a room quickly and generate a 2D floor plan and a 3D model.
+
+The project covers the whole chain:
+
+* **Electronics**: custom PCB built around an STM32 microcontroller and the VL53L9CX LiDAR, from schematic capture to board bring-up.
+* **Embedded software**: C firmware to configure the sensors, acquire depth data in real time and manage communication.
+* **Artificial intelligence**: recognition of room elements (walls, doors, windows, obstacles), on the device or offloaded to the computer.
+* **Application**: data reception (USB, Bluetooth or Wi-Fi) and display of the 2D floor plan and 3D point cloud.
+* **Mechanics**: ergonomic enclosure designed in CAD and 3D-printed.
+
+## Constraints
+
+* **STMicroelectronics** components only.
+* Budget of about **€150** for the whole project.
+* **Battery-powered**, with a low-power design.
+* Handheld device: lightweight and easy to use.
+
+## Approach
+
+The team works in **agile sprints** and keeps a lab notebook (decisions, justifications, failure analysis). To limit risk, the priority is a **minimum viable product**: 2D mapping and raw LiDAR data transmission first, then AI and 3D rendering. Each sensor is validated on a Nucleo development board before the PCB is manufactured.
+
+## Progress
+
+**IMU validation.** I brought up the **STEVAL-MKI227KA** evaluation board (LSM6DSV16X) on a **NUCLEO-F410RB** over I2C:
+
+* I2C bus scan and sensor identification through its `WHO_AM_I` register;
+* accelerometer and gyroscope configured at 30 Hz by reading and writing registers directly with the HAL;
+* acceleration, angular rate and temperature streamed over the serial port, with a wiring and troubleshooting guide for the team.
+
+Next steps: VL53L9CX LiDAR integration, then PCB design.
+
+📁 [Project GitHub repository](https://github.com/rahim974/3Dscan2A)
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projects.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Back to projects
+  </a>
+</div>

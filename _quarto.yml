@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site_fr
   render:
     - index.qmd
     - projets.qmd
@@ -32,7 +32,7 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/elnmoat/
       - text: "🇬🇧 English"
-        href: https://elnmoat.github.io/en/
+        href: https://elnmoat.github.io/
   sidebar:
     - id: tipe-sidebar2
       contents:

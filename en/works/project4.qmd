@@ -1,8 +1,8 @@
 ---
 title: "Etch A Sketch on FPGA (VHDL)"
 date: 2026-10-01
-description: "Digital Etch A Sketch on a DE10-Nano board: decoding of two rotary encoders, HDMI video controller and frame memory in VHDL, validated in simulation and then on the board (Intel Cyclone V, Quartus)."
-image: "fpga/simulation.png"
+description: "Complete digital Etch A Sketch on a DE10-Nano board: rotary encoders, 720×480 HDMI controller, dual-port frame memory and screen clearing, designed in VHDL, simulated and validated on the board."
+image: "fpga/degrade.png"
 categories: [FPGA, VHDL, Digital design, HDMI]
 ---
 
@@ -12,43 +12,90 @@ categories: [FPGA, VHDL, Digital design, HDMI]
 |:--|:--|
 | **Context** | FPGA lab project, ENSEA, 2026–2027 |
 | **Team** | 2 students |
-| **Tools** | VHDL, Quartus Prime, NVC, Surfer, testbenches |
+| **Hardware** | DE10-Nano board (Intel Cyclone V SoC FPGA 5CSEBA6U23I7), mezzanine board with 2 rotary encoders and 10 LEDs |
+| **Tools** | VHDL, Quartus Prime, NVC and Surfer (simulation), VLC with an HDMI-to-USB capture adapter |
+| **Result** | Complete Etch A Sketch: drawing at 720×480 over HDMI, persistent strokes, clear button |
 
 ## Goal
 
-Build a digital version of the **Etch A Sketch**: two rotary knobs move a pen that draws on a screen. The project runs on a **DE10-Nano** board (Intel Cyclone V SoC FPGA **5CSEBA6U23I7**) with a mezzanine board holding two rotary encoders and 10 LEDs. The image is sent to the board's **HDMI** output.
+Build a digital version of the **Etch A Sketch**: two rotary knobs move a pen that draws on a screen. Here the knobs are two **rotary encoders** and the drawing is shown on the board's **HDMI output**.
 
-Each block is first validated in **simulation** (VHDL testbench, NVC and Surfer), then tested on the board after synthesis and pin assignment in **Quartus**.
+The project was built block by block, each time following the same method: **schematic, VHDL, simulation, then test on the board**.
 
 ## Architecture
 
 ```{mermaid}
 flowchart LR
-    ENC_G[Left encoder] --> DEC_X[Quadrature decoder X]
-    ENC_D[Right encoder] --> DEC_Y[Quadrature decoder Y]
-    DEC_X -- "pen x" --> RAM[Dual-port<br/>frame memory]
-    DEC_Y -- "pen y" --> RAM
-    CTRL[HDMI controller<br/>HS / VS / DE] -- "pixel address" --> RAM
+    ENC_G[Left encoder] --> DEC_X[Decoder X]
+    ENC_D[Right encoder] --> DEC_Y[Decoder Y]
+    DEC_X -- "pen x" --> A[Port A<br/>write]
+    DEC_Y -- "pen y" --> A
+    BTN[Left button] --> CLR[Clear logic]
+    CLR --> A
+    A --> RAM[(Dual-port memory<br/>720 × 480)]
+    CTRL[HDMI controller] -- "pixel address" --> B[Port B<br/>read]
+    B --> RAM
     RAM -- "colour" --> ADV[ADV7513 HDMI chip]
-    CTRL -- "sync signals" --> ADV
+    CTRL -- "HS / VS / DE" --> ADV
     ADV --> SCREEN([Screen])
 ```
 
-## Quadrature encoder decoding
+## 1. Rotary encoders
 
-A rotary encoder outputs two signals, A and B, shifted by a quarter period: the order in which they change gives the direction of rotation. The decoder detects rising and falling edges on A and B and increments or decrements a counter whose width is configurable (`generic`).
+A rotary encoder outputs two signals, A and B, shifted by a quarter period: the order in which they change gives the direction of rotation. The decoder detects edges on A and B and increments or decrements a counter of configurable width.
 
-* **Synchronisation**: A and B are asynchronous, so they go through a two-flip-flop register before any edge detection to avoid metastability.
-* **Debouncing**: on the board, a single notch made the counter jump by several steps because of mechanical bounce. I added a `G_TICK_DIV` generic that subsamples A and B (every 1 ms with a 50 MHz clock), which removes the bounce without missing any notch.
-* **Clamping**: the counter is used as the pen coordinate, so it must stay within the image instead of wrapping from one edge to the other.
+* **Synchronisation**: A and B are not synchronised to the FPGA clock, so they go through two flip-flops before any edge detection, to avoid metastability.
+* **Debouncing**: on the board, a single notch sometimes moved the counter by several steps. The mechanical contacts bounce for a few milliseconds, and at 50 MHz each bounce looks like a real edge. A `G_TICK_DIV` generic subsamples A and B every 1 ms, which removes the bounce without missing any notch.
+* **Validation**: the counter is first wired to the 10 LEDs to read its value in binary on the board.
 
-![Edge detection and counter increment logic](fpga/structure_encoder.png){width=80%}
+![Edge detection and counter increment logic](fpga/structure_encoder.png){width=75%}
 
 ![Encoder simulation, clockwise then counter-clockwise rotation (Surfer)](fpga/simulation.png)
 
-## HDMI video controller
+## 2. HDMI controller
 
-The controller generates the horizontal and vertical sync signals (`HS`, `VS`) and the `Data Enable` signal expected by the ADV7513 chip, for a 720 × 480 resolution. It also outputs the address and (x, y) coordinates of the pixel being displayed, used to read the frame memory. Timings (front porch, sync, back porch) are generic parameters of the component.
+The controller produces no colour: it scans the screen pixel by pixel and reports at each clock cycle where it is. It relies on two counters, a horizontal one (858 cycles per line) and a vertical one (525 lines per frame). The scanned area is larger than the 720×480 image: the invisible *blanking* areas are part of the standard and let the screen recognise the 480p mode.
+
+A frame is 858 × 525 = 450,450 cycles, i.e. **16.7 ms at 27 MHz: 60 frames per second**.
+
+![Horizontal sync: `o_hdmi_hs` pulse and `r_h_active` visible area over two lines](fpga/hsync.png)
+
+![Zoom on the start of the visible area: the x coordinate starts at 0, with its one-cycle delay compensated](fpga/zoom_x.png)
+
+The frame memory is stored row by row: the address of pixel (x, y) is **x + y × 720**, from 0 to 345,599.
+
+![Generation of `o_pixel_en` and `o_pixel_address` over a full frame](fpga/adresse.png)
+
+To test the controller on the board, its counters are wired straight to the colours: red follows x and green follows y. On 8 bits the value wraps every 256 pixels, hence the tiles.
+
+![Gradient displayed in VLC from the board's HDMI output](fpga/degrade.png){width=60%}
+
+## 3. Moving a pixel
+
+A single white pixel is displayed at the encoders' position. A register had to be added so that the colour arrives in the same cycle as the `Data Enable` signal, and the encoders were moved to the 27 MHz pixel clock so that the whole design runs on a single clock.
+
+## 4. Persistent drawing
+
+For the pen to leave a trail, the image is stored in a **dual-port memory** with one cell per pixel:
+
+* **port A** writes white at the cursor position;
+* **port B** reads, in parallel, the cell of the pixel being scanned and directly gives the colour sent to the screen.
+
+At 24 bits per pixel (about 8.3 Mbit), the image would not fit in the FPGA's memory blocks (about 5.5 Mbit), so each cell uses 8 bits. The memory's one-cycle read latency replaces the register of the previous step and keeps the image aligned.
+
+![Logic resources reported by Quartus: 219 ALUTs for logic](fpga/lut.png){width=70%}
+
+## 5. Clearing the screen
+
+Pressing the left encoder's button clears the screen. Since port B is reserved for display, clearing goes through port A, which then has two masters: the encoders in normal operation, and a counter that sweeps every address during clearing. A `s_clearing` signal selects between them by switching the address, data and write-enable together.
+
+Clearing takes 345,600 / 27 MHz ≈ **12.8 ms**, less than one frame, so it looks instantaneous. The pen stays where it is and drawing can resume immediately.
+
+## Takeaways
+
+* Any signal coming from outside must go through flip-flops before being used.
+* A signal assigned in a process changes on the next clock edge, which explains the one-cycle offsets that must be compensated.
+* A passing simulation does not guarantee real-world behaviour: encoder bounce only showed up on the actual board.
 
 <div style="margin-top: 40px; text-align: center;">
   <a href="../projects.qmd" class="btn btn-outline-secondary">

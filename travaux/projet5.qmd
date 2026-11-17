@@ -1,0 +1,61 @@
+---
+title: "Scanner 3D portable à LiDAR (en cours)"
+date: 2026-11-15
+description: "Projet de 2ᵉ année en équipe de 6 : un scanner portable qui cartographie une pièce en 2D et en 3D, du PCB sur mesure autour d'un STM32 et du LiDAR VL53L9CX jusqu'à l'application de visualisation."
+image: "scan3d/scan3d.svg"
+categories: [STM32, C, LiDAR, PCB, Systèmes embarqués]
+---
+
+::: {.callout-note}
+Projet en cours. Cette page présente le cadrage et les premières étapes ; elle sera complétée au fil de l'avancement.
+:::
+
+## En bref
+
+| | |
+|:--|:--|
+| **Cadre** | Projet pluridisciplinaire de 2ᵉ année, ENSEA, 2026–2027 |
+| **Équipe** | 6 étudiants, encadrés par un enseignant |
+| **Capteurs** | LiDAR multizone ST **VL53L9CX**, centrale inertielle ST **LSM6DSV16X** |
+| **Outils** | STM32CubeMX, STM32CubeIDE, C (HAL), KiCad, Git/GitHub |
+
+## Objectif
+
+Concevoir un **scanner 3D/2D portable et autonome**, capable de mesurer une pièce et d'afficher sa géométrie en temps réel. Le scénario fictif est celui d'un cabinet d'architectes ou d'une agence immobilière qui veut relever rapidement une pièce, générer un plan 2D et un modèle 3D.
+
+Le projet couvre toute la chaîne :
+
+* **Électronique** : PCB sur mesure autour d'un microcontrôleur STM32 et du LiDAR VL53L9CX, de la saisie du schéma au test de la carte.
+* **Logiciel embarqué** : firmware C pour configurer les capteurs, acquérir les profondeurs en temps réel et gérer la communication.
+* **Intelligence artificielle** : reconnaissance des éléments de la pièce (murs, portes, fenêtres, obstacles), embarquée ou déportée sur l'ordinateur.
+* **Application** : réception des données (USB, Bluetooth ou Wi-Fi) et affichage du plan 2D et du nuage de points 3D.
+* **Mécanique** : boîtier ergonomique conçu en CAO et imprimé en 3D.
+
+## Contraintes
+
+* Composants exclusivement **STMicroelectronics**.
+* Budget d'environ **150 €** pour l'ensemble du projet.
+* Fonctionnement sur **batterie**, avec une conception basse consommation.
+* Appareil tenu à la main : léger et simple à utiliser.
+
+## Démarche
+
+L'équipe travaille en **sprints agiles** et tient un cahier de laboratoire (décisions, justifications, analyse des échecs). Pour limiter les risques, la priorité est donnée à un **produit minimum** : cartographie 2D et transmission brute des données LiDAR d'abord, puis l'IA et le rendu 3D. Chaque capteur est validé sur une carte de développement Nucleo avant la fabrication du PCB.
+
+## Avancement
+
+**Validation de la centrale inertielle.** J'ai mis en service la carte d'évaluation **STEVAL-MKI227KA** (LSM6DSV16X) sur une **NUCLEO-F410RB** en I2C :
+
+* scan du bus I2C et identification du capteur par son registre `WHO_AM_I` ;
+* configuration de l'accéléromètre et du gyroscope à 30 Hz par lecture et écriture directe des registres avec la HAL ;
+* affichage des accélérations, vitesses angulaires et température sur le port série, avec un guide de câblage et de dépannage pour l'équipe.
+
+Prochaines étapes : intégration du LiDAR VL53L9CX, puis conception du PCB.
+
+📁 [Dépôt GitHub du projet](https://github.com/rahim974/3Dscan2A)
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="../projets.qmd" class="btn btn-outline-secondary">
+    <i class="bi bi-arrow-left"></i> Retour aux projets
+  </a>
+</div>
