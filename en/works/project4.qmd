@@ -83,7 +83,7 @@ For the pen to leave a trail, the image is stored in a **dual-port memory** with
 
 At 24 bits per pixel (about 8.3 Mbit), the image would not fit in the FPGA's memory blocks (about 5.5 Mbit), so each cell uses 8 bits. The memory's one-cycle read latency replaces the register of the previous step and keeps the image aligned.
 
-![Logic resources reported by Quartus: 219 ALUTs for logic](fpga/lut.png){width=70%}
+![LUT view of the design in Quartus: 219 ALUTs used for logic](fpga/lut.png)
 
 ## 5. Clearing the screen
 

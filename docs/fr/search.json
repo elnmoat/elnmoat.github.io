@@ -347,7 +347,7 @@
     "href": "travaux/projet4.html#mémorisation",
     "title": "Écran magique sur FPGA (VHDL)",
     "section": "4. Mémorisation",
-    "text": "4. Mémorisation\nPour que le stylet laisse une trace, l’image est stockée dans une mémoire dual-port avec une case par pixel :\n\nle port A écrit du blanc à la position du curseur ;\nle port B relit en parallèle la case du pixel en cours de balayage et donne directement la couleur envoyée à l’écran.\n\nEn 24 bits par pixel (environ 8,3 Mbit), l’image ne tiendrait pas dans les blocs mémoire du FPGA (environ 5,5 Mbit) : chaque case est donc codée sur 8 bits. Le cycle de lecture de la mémoire remplace le registre de l’étape précédente et garde l’image alignée.\n\n\n\nRessources logiques utilisées dans Quartus : 219 ALUT pour la logique"
+    "text": "4. Mémorisation\nPour que le stylet laisse une trace, l’image est stockée dans une mémoire dual-port avec une case par pixel :\n\nle port A écrit du blanc à la position du curseur ;\nle port B relit en parallèle la case du pixel en cours de balayage et donne directement la couleur envoyée à l’écran.\n\nEn 24 bits par pixel (environ 8,3 Mbit), l’image ne tiendrait pas dans les blocs mémoire du FPGA (environ 5,5 Mbit) : chaque case est donc codée sur 8 bits. Le cycle de lecture de la mémoire remplace le registre de l’étape précédente et garde l’image alignée.\n\n\n\nVue des LUT du design dans Quartus : 219 ALUT utilisées pour la logique"
   },
   {
     "objectID": "travaux/projet4.html#effacement",

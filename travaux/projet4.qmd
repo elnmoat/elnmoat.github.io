@@ -83,7 +83,7 @@ Pour que le stylet laisse une trace, l'image est stockée dans une **mémoire du
 
 En 24 bits par pixel (environ 8,3 Mbit), l'image ne tiendrait pas dans les blocs mémoire du FPGA (environ 5,5 Mbit) : chaque case est donc codée sur 8 bits. Le cycle de lecture de la mémoire remplace le registre de l'étape précédente et garde l'image alignée.
 
-![Ressources logiques utilisées dans Quartus : 219 ALUT pour la logique](fpga/lut.png){width=70%}
+![Vue des LUT du design dans Quartus : 219 ALUT utilisées pour la logique](fpga/lut.png)
 
 ## 5. Effacement
 

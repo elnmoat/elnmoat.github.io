@@ -347,7 +347,7 @@
     "href": "works/project4.html#persistent-drawing",
     "title": "Etch A Sketch on FPGA (VHDL)",
     "section": "4. Persistent drawing",
-    "text": "4. Persistent drawing\nFor the pen to leave a trail, the image is stored in a dual-port memory with one cell per pixel:\n\nport A writes white at the cursor position;\nport B reads, in parallel, the cell of the pixel being scanned and directly gives the colour sent to the screen.\n\nAt 24 bits per pixel (about 8.3 Mbit), the image would not fit in the FPGA’s memory blocks (about 5.5 Mbit), so each cell uses 8 bits. The memory’s one-cycle read latency replaces the register of the previous step and keeps the image aligned.\n\n\n\nLogic resources reported by Quartus: 219 ALUTs for logic"
+    "text": "4. Persistent drawing\nFor the pen to leave a trail, the image is stored in a dual-port memory with one cell per pixel:\n\nport A writes white at the cursor position;\nport B reads, in parallel, the cell of the pixel being scanned and directly gives the colour sent to the screen.\n\nAt 24 bits per pixel (about 8.3 Mbit), the image would not fit in the FPGA’s memory blocks (about 5.5 Mbit), so each cell uses 8 bits. The memory’s one-cycle read latency replaces the register of the previous step and keeps the image aligned.\n\n\n\nLUT view of the design in Quartus: 219 ALUTs used for logic"
   },
   {
     "objectID": "works/project4.html#clearing-the-screen",
